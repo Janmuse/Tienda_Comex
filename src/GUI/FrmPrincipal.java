@@ -61,9 +61,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jPanelPrincipal = new javax.swing.JPanel();
         jPanelPaP = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jPanelPrd = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jPanelOrd = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         MbMenu = new javax.swing.JMenu();
         MnItPaP = new javax.swing.JMenuItem();
@@ -74,42 +76,69 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Gay");
+        jPanelPrincipal.setBackground(new java.awt.Color(51, 255, 51));
+
+        jPanelPaP.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel3.setText("Tienda de Pinturas Comex");
 
         javax.swing.GroupLayout jPanelPaPLayout = new javax.swing.GroupLayout(jPanelPaP);
         jPanelPaP.setLayout(jPanelPaPLayout);
         jPanelPaPLayout.setHorizontalGroup(
             jPanelPaPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPaPLayout.createSequentialGroup()
-                .addContainerGap(460, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(358, 358, 358))
+            .addGroup(jPanelPaPLayout.createSequentialGroup()
+                .addGap(251, 251, 251)
+                .addComponent(jLabel3)
+                .addContainerGap(449, Short.MAX_VALUE))
         );
         jPanelPaPLayout.setVerticalGroup(
             jPanelPaPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPaPLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(jLabel1)
-                .addContainerGap(364, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addComponent(jLabel3)
+                .addContainerGap(359, Short.MAX_VALUE))
         );
 
-        jLabel2.setText("Sexo anal");
+        jPanelPrd.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel2.setText("Productos");
 
         javax.swing.GroupLayout jPanelPrdLayout = new javax.swing.GroupLayout(jPanelPrd);
         jPanelPrd.setLayout(jPanelPrdLayout);
         jPanelPrdLayout.setHorizontalGroup(
             jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPrdLayout.createSequentialGroup()
-                .addContainerGap(437, Short.MAX_VALUE)
+            .addGroup(jPanelPrdLayout.createSequentialGroup()
+                .addGap(293, 293, 293)
                 .addComponent(jLabel2)
-                .addGap(352, 352, 352))
+                .addContainerGap(491, Short.MAX_VALUE))
         );
         jPanelPrdLayout.setVerticalGroup(
             jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPrdLayout.createSequentialGroup()
-                .addGap(52, 52, 52)
+                .addGap(59, 59, 59)
                 .addComponent(jLabel2)
-                .addContainerGap(359, Short.MAX_VALUE))
+                .addContainerGap(352, Short.MAX_VALUE))
+        );
+
+        jPanelOrd.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setText("Orden de Venta");
+
+        javax.swing.GroupLayout jPanelOrdLayout = new javax.swing.GroupLayout(jPanelOrd);
+        jPanelOrd.setLayout(jPanelOrdLayout);
+        jPanelOrdLayout.setHorizontalGroup(
+            jPanelOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelOrdLayout.createSequentialGroup()
+                .addGap(274, 274, 274)
+                .addComponent(jLabel1)
+                .addContainerGap(482, Short.MAX_VALUE))
+        );
+        jPanelOrdLayout.setVerticalGroup(
+            jPanelOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelOrdLayout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addComponent(jLabel1)
+                .addContainerGap(334, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelPrincipalLayout = new javax.swing.GroupLayout(jPanelPrincipal);
@@ -119,12 +148,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
             .addComponent(jPanelPaP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanelPrd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanelOrd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelPrincipalLayout.setVerticalGroup(
             jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanelPaP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanelPrd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanelOrd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         MbMenu.setText("Menu");
@@ -159,6 +192,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         MbVta.setText("Venta");
 
         MnItOrd.setText("Orden de Pago");
+        MnItOrd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnItOrdActionPerformed(evt);
+            }
+        });
         MbVta.add(MnItOrd);
 
         jMenuBar1.add(MbVta);
@@ -193,6 +231,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         changePanel(jPanelPrd);
     }//GEN-LAST:event_MnItPrdActionPerformed
+
+    private void MnItOrdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnItOrdActionPerformed
+        // TODO add your handling code here:
+        changePanel(jPanelOrd);
+    }//GEN-LAST:event_MnItOrdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,7 +281,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem MnItPrd;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanelOrd;
     private javax.swing.JPanel jPanelPaP;
     private javax.swing.JPanel jPanelPrd;
     private javax.swing.JPanel jPanelPrincipal;

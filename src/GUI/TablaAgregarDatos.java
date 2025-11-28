@@ -291,9 +291,9 @@ void insertarPintura() {
                      "'" + txtTipoPintura.getText() + "'," +
                      "'" + txtAcabado.getText() + "'," +
                      "'" + txtPresentacion.getText() + "'," +
-                     "'" + txtCantidad_Unidad.getText() + "'," +
+                      txtCantidad_Unidad.getText()  + "," +
                      "'" + txtUnidad_Medida.getText() + "'," +
-                     txtPrecio.getText() + "," +
+                     txtPrecio.getText()  + "," +
                      txtCantidad.getText() +
                      ")";
 

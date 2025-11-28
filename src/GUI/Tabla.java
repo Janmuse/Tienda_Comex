@@ -15,16 +15,14 @@ import Interfaces.cargarDatos;
  * @author HP_25
  */
 public class Tabla extends javax.swing.JFrame implements cargarDatos {
-
     /**
      * Creates new form VerPinturasForm
      */
     public Tabla() {
         initComponents();
         cargarDatos();
-
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,6 +37,7 @@ public class Tabla extends javax.swing.JFrame implements cargarDatos {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TBLPinturas = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -79,13 +78,19 @@ public class Tabla extends javax.swing.JFrame implements cargarDatos {
         ));
         jScrollPane1.setViewportView(TBLPinturas);
 
+        jButton1.setText("jButton1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 953, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 953, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -93,7 +98,9 @@ public class Tabla extends javax.swing.JFrame implements cargarDatos {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(198, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(157, Short.MAX_VALUE))
         );
 
         pack();
@@ -137,6 +144,7 @@ public class Tabla extends javax.swing.JFrame implements cargarDatos {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TBLPinturas;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -144,35 +152,34 @@ public class Tabla extends javax.swing.JFrame implements cargarDatos {
     // End of variables declaration//GEN-END:variables
 
 //Metodo para cargar los datos
-@Override
-public void cargarDatos() {
-    try {
-        Connection con = (Connection) Conexion.getConexion();
-        Statement st = con.createStatement();
-        ResultSet rs = st.executeQuery("SELECT * FROM pinturas_y_recubrimientos");
+    @Override
+    public void cargarDatos() {
+        try {
+            Connection con = (Connection) Conexion.getConexion();
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM pinturas_y_recubrimientos");
 
-        DefaultTableModel modelo = (DefaultTableModel) TBLPinturas.getModel();
+            DefaultTableModel modelo = (DefaultTableModel) TBLPinturas.getModel();
 
-        modelo.setRowCount(0); // limpia la tabla
+            modelo.setRowCount(0); // limpia la tabla
 
-        while (rs.next()) {
-            Object[] columna = new Object[9];
+            while (rs.next()) {
+                Object[] columna = new Object[9];
 
-            columna[0] = rs.getInt("ID_Pintura");
-            columna[1] = rs.getString("Nombre");
-            columna[2] = rs.getString("Tipo_pintura");
-            columna[3] = rs.getString("Acabado");
-            columna[4] = rs.getString("Presentacion");
-            columna[5] = rs.getString("Cantidad_Por_Unidad");
-            columna[6] = rs.getString("Unidad_Medida");
-            columna[7] = rs.getDouble("Precio");
-            columna[8] = rs.getInt("Cantidad");
+                columna[0] = rs.getInt("ID_Pintura");
+                columna[1] = rs.getString("Nombre");
+                columna[2] = rs.getString("Tipo_pintura");
+                columna[3] = rs.getString("Acabado");
+                columna[4] = rs.getString("Presentacion");
+                columna[5] = rs.getString("Cantidad_Por_Unidad");
+                columna[6] = rs.getString("Unidad_Medida");
+                columna[7] = rs.getDouble("Precio");
+                columna[8] = rs.getInt("Cantidad");
 
-            modelo.addRow(columna);
-        }
-
-    } catch (Exception e) {
-        System.out.println("Error: " + e.getMessage());
-    }
- }
+                modelo.addRow(columna);
+            }
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+       }
+     }
 }

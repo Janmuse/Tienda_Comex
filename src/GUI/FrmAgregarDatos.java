@@ -33,7 +33,6 @@ public class FrmAgregarDatos extends FrameABC {
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -42,7 +41,6 @@ public class FrmAgregarDatos extends FrameABC {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        txtID = new javax.swing.JTextField();
         txtTipoPintura = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
         txtPresentacion = new javax.swing.JTextField();
@@ -64,8 +62,6 @@ public class FrmAgregarDatos extends FrameABC {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("ID");
-
         jLabel2.setText("Nombre");
 
         jLabel3.setText("Tipo pintura");
@@ -81,13 +77,6 @@ public class FrmAgregarDatos extends FrameABC {
         jLabel8.setText("Precio");
 
         jLabel9.setText("Cantidad");
-
-        txtID.setName(""); // NOI18N
-        txtID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIDActionPerformed(evt);
-            }
-        });
 
         txtTipoPintura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,7 +115,7 @@ public class FrmAgregarDatos extends FrameABC {
                             .addComponent(jLabel9))
                         .addGap(42, 42, 42)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAcabado, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                            .addComponent(txtAcabado)
                             .addComponent(txtPresentacion)
                             .addComponent(txtCantidad_Unidad)
                             .addComponent(txtUnidad_Medida)
@@ -137,16 +126,9 @@ public class FrmAgregarDatos extends FrameABC {
                         .addGap(67, 67, 67)
                         .addComponent(txtTipoPintura))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(120, 120, 120))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(87, 87, 87)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtID, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                            .addComponent(txtNombre))))
+                        .addComponent(jLabel2)
+                        .addGap(87, 87, 87)
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(121, 121, 121))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(87, 87, 87)
@@ -156,11 +138,7 @@ public class FrmAgregarDatos extends FrameABC {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
+                .addGap(45, 45, 45)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -223,10 +201,6 @@ public class FrmAgregarDatos extends FrameABC {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIDActionPerformed
-
     private void txtTipoPinturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoPinturaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTipoPinturaActionPerformed
@@ -277,6 +251,7 @@ public class FrmAgregarDatos extends FrameABC {
             }
         });
     }
+    
     @Override
     public void insertarDatos() {
     try {
@@ -306,10 +281,8 @@ public class FrmAgregarDatos extends FrameABC {
     }
  }
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnGuardar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -328,7 +301,6 @@ public class FrmAgregarDatos extends FrameABC {
     private javax.swing.JTextField txtAcabado;
     private javax.swing.JTextField txtCantidad;
     private javax.swing.JTextField txtCantidad_Unidad;
-    private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtPrecio;
     private javax.swing.JTextField txtPresentacion;

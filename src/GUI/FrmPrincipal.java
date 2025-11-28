@@ -4,7 +4,6 @@
  */
 package GUI;
 
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**

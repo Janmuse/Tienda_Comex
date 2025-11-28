@@ -7,14 +7,14 @@ package GUI;
 import Clases_Simples.Conexion;
 import java.sql.*;
 import javax.swing.table.DefaultTableModel;
-import Interfaces.CRUD;
+import Interfaces.cargarDatos;
 
 
 /**
  *
  * @author HP_25
  */
-public class Tabla extends javax.swing.JFrame implements CRUD {
+public class Tabla extends javax.swing.JFrame implements cargarDatos {
 
     /**
      * Creates new form VerPinturasForm

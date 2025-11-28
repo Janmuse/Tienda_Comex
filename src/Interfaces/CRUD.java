@@ -7,8 +7,6 @@ package Interfaces;
 
 public interface CRUD 
 {
-    void cargarDatos(); //calcula el pago; no hay implementación
-    /*void 
-    */
+    void cargarDatos(); 
     
-} // fin 
+} 

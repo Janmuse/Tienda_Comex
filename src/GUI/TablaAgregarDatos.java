@@ -1,11 +1,14 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package GUI;
+
 import Clases_Simples.Conexion;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.Statement;
+
 /**
  *
  * @author HP_25
@@ -81,6 +84,7 @@ public class TablaAgregarDatos extends javax.swing.JFrame {
 
         jLabel9.setText("Cantidad");
 
+        txtID.setName(""); // NOI18N
         txtID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIDActionPerformed(evt);
@@ -182,11 +186,11 @@ public class TablaAgregarDatos extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txtUnidad_Medida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
-                .addGap(18, 18, 18)
+                .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel9)
                     .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -208,15 +212,16 @@ public class TablaAgregarDatos extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(36, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62))
+                .addGap(32, 32, 32))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -278,31 +283,30 @@ void insertarPintura() {
     try {
         Connection con = Conexion.getConexion();
 
+        var stmt = con.createStatement();
+
         String sql = "INSERT INTO pinturas_y_recubrimientos " +
-                     "(Nombre, Tipo_pintura, Acabado, Presentacion, Cantidad_Por_Unidad, Unidad_Medida, Precio, Cantidad) " +
-                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                     "(Nombre, Tipo_pintura, Acabado, Presentacion, Cantidad_Por_Unidad, Unidad_Medida, Precio, Cantidad) VALUES (" +
+                     "'" + txtNombre.getText() + "'," +
+                     "'" + txtTipoPintura.getText() + "'," +
+                     "'" + txtAcabado.getText() + "'," +
+                     "'" + txtPresentacion.getText() + "'," +
+                     "'" + txtCantidad_Unidad.getText() + "'," +
+                     "'" + txtUnidad_Medida.getText() + "'," +
+                     txtPrecio.getText() + "," +
+                     txtCantidad.getText() +
+                     ")";
 
-        PreparedStatement ps = con.prepareStatement(sql);
-
-        ps.setString(1, txtNombre.getText());
-        ps.setString(2, txtTipoPintura.getText());
-        ps.setString(3, txtAcabado.getText());
-        ps.setString(4, txtPresentacion.getText());
-        ps.setString(5, txtCantidad_Unidad.getText());
-        ps.setString(6, txtUnidad_Medida.getText());
-        ps.setDouble(7, Double.parseDouble(txtPrecio.getText()));
-        ps.setInt(8, Integer.parseInt(txtCantidad.getText()));
-
-        ps.executeUpdate();
+        stmt.executeUpdate(sql);
 
         javax.swing.JOptionPane.showMessageDialog(this, "Registro guardado");
-
-        this.dispose(); // cierra ventana
+        this.dispose();
 
     } catch (Exception e) {
         javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
     }
-}
+ }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnGuardar;

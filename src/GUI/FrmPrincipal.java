@@ -60,11 +60,49 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jPanelPrincipal = new javax.swing.JPanel();
         jPanelPaP = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jPanelPrd = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        BtnPint = new javax.swing.JButton();
+        BtnSella = new javax.swing.JButton();
+        BtnImper = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        BtnMade = new javax.swing.JButton();
+        BtnAcceso = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jPanelOrd = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jPanelTabPint = new javax.swing.JPanel();
+        jScrollPanePint = new javax.swing.JScrollPane();
+        jTablePint = new javax.swing.JTable();
+        BtnAñadirPint = new javax.swing.JButton();
+        BtnEliminarPint = new javax.swing.JButton();
+        BtnModificarPint = new javax.swing.JButton();
+        jPanelTabSella = new javax.swing.JPanel();
+        jScrollPaneSella = new javax.swing.JScrollPane();
+        jTableSella = new javax.swing.JTable();
+        BtnAñadirSella = new javax.swing.JButton();
+        BtnEliminarSella = new javax.swing.JButton();
+        BtnModificarSella = new javax.swing.JButton();
+        jPanelTabImper = new javax.swing.JPanel();
+        jScrollPaneImper = new javax.swing.JScrollPane();
+        jTableImper = new javax.swing.JTable();
+        BtnAñadirImper = new javax.swing.JButton();
+        BtnEliminarImper = new javax.swing.JButton();
+        BtnModificarImper = new javax.swing.JButton();
+        jPanelTabMad = new javax.swing.JPanel();
+        jScrollPaneMad = new javax.swing.JScrollPane();
+        jTableMad = new javax.swing.JTable();
+        BtnAñadirMad = new javax.swing.JButton();
+        BtnEliminarMad = new javax.swing.JButton();
+        BtnModificarMad = new javax.swing.JButton();
+        jPanelTabAcceso = new javax.swing.JPanel();
+        jScrollPaneAcceso = new javax.swing.JScrollPane();
+        jTableAcceso = new javax.swing.JTable();
+        BtnAñadirAcceso = new javax.swing.JButton();
+        BtnEliminarAcceso = new javax.swing.JButton();
+        BtnModificarAcceso = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         MbMenu = new javax.swing.JMenu();
         MnItPaP = new javax.swing.JMenuItem();
@@ -77,9 +115,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jPanelPrincipal.setBackground(new java.awt.Color(51, 255, 51));
 
-        jPanelPaP.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel3.setText("Tienda de Pinturas Comex");
+        jPanelPaP.setBackground(new java.awt.Color(102, 204, 255));
 
         javax.swing.GroupLayout jPanelPaPLayout = new javax.swing.GroupLayout(jPanelPaP);
         jPanelPaP.setLayout(jPanelPaPLayout);
@@ -89,55 +125,408 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 .addGap(251, 251, 251)
                 .addComponent(jLabel3)
                 .addContainerGap(437, Short.MAX_VALUE))
+            .addGap(0, 850, Short.MAX_VALUE)
         );
         jPanelPaPLayout.setVerticalGroup(
             jPanelPaPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelPaPLayout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jLabel3)
-                .addContainerGap(359, Short.MAX_VALUE))
+            .addGap(0, 542, Short.MAX_VALUE)
         );
 
-        jPanelPrd.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelPrd.setBackground(new java.awt.Color(102, 204, 255));
 
-        jLabel2.setText("Productos");
+        jLabel2.setText("Categorias");
+
+        BtnPint.setIcon(new javax.swing.ImageIcon("C:\\Users\\Blayder510\\Pictures\\Iconos TP\\pint2.jpg")); // NOI18N
+        BtnPint.setText("BtnPint");
+        BtnPint.setName(""); // NOI18N
+        BtnPint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPintActionPerformed(evt);
+            }
+        });
+
+        BtnSella.setIcon(new javax.swing.ImageIcon("C:\\Users\\Blayder510\\Pictures\\Iconos TP\\Sellador2.jpg")); // NOI18N
+        BtnSella.setText("BtnSella");
+        BtnSella.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSellaActionPerformed(evt);
+            }
+        });
+
+        BtnImper.setIcon(new javax.swing.ImageIcon("C:\\Users\\Blayder510\\Pictures\\Iconos TP\\impermi2.jpg")); // NOI18N
+        BtnImper.setText("BtnImper");
+        BtnImper.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnImperActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Pinturas");
+
+        jLabel5.setText("Selladores");
+
+        jLabel6.setText("Impermeabilizantes");
+
+        BtnMade.setIcon(new javax.swing.ImageIcon("C:\\Users\\Blayder510\\Pictures\\Iconos TP\\Maderas2.jpg")); // NOI18N
+        BtnMade.setText("BtnMade");
+        BtnMade.setName(""); // NOI18N
+        BtnMade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMadeActionPerformed(evt);
+            }
+        });
+
+        BtnAcceso.setIcon(new javax.swing.ImageIcon("C:\\Users\\Blayder510\\Pictures\\Iconos TP\\accesorios2.png")); // NOI18N
+        BtnAcceso.setText("BtnAcceso");
+        BtnAcceso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAccesoActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Maderas");
+
+        jLabel8.setText("Accesorios");
 
         javax.swing.GroupLayout jPanelPrdLayout = new javax.swing.GroupLayout(jPanelPrd);
         jPanelPrd.setLayout(jPanelPrdLayout);
         jPanelPrdLayout.setHorizontalGroup(
             jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPrdLayout.createSequentialGroup()
-                .addGap(293, 293, 293)
-                .addComponent(jLabel2)
-                .addContainerGap(491, Short.MAX_VALUE))
+                .addGroup(jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelPrdLayout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+                        .addComponent(jLabel5)
+                        .addGap(91, 91, 91))
+                    .addGroup(jPanelPrdLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BtnPint, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(79, 79, 79)
+                        .addComponent(BtnSella, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(62, 62, 62)))
+                .addGroup(jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelPrdLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel6))
+                    .addComponent(BtnImper, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(258, Short.MAX_VALUE))
+            .addGroup(jPanelPrdLayout.createSequentialGroup()
+                .addGroup(jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelPrdLayout.createSequentialGroup()
+                        .addGap(206, 206, 206)
+                        .addComponent(BtnMade, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(81, 81, 81)
+                        .addComponent(BtnAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelPrdLayout.createSequentialGroup()
+                        .addGap(328, 328, 328)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanelPrdLayout.createSequentialGroup()
+                        .addGap(235, 235, 235)
+                        .addComponent(jLabel7)
+                        .addGap(139, 139, 139)
+                        .addComponent(jLabel8)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelPrdLayout.setVerticalGroup(
             jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPrdLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
+                .addGap(44, 44, 44)
                 .addComponent(jLabel2)
-                .addContainerGap(352, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addGroup(jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnSella, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnPint, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnImper, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5)
+                        .addComponent(jLabel4))
+                    .addComponent(jLabel6))
+                .addGap(66, 66, 66)
+                .addGroup(jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnMade, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(130, 130, 130))
         );
 
-        jPanelOrd.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel1.setText("Orden de Venta");
+        jPanelOrd.setBackground(new java.awt.Color(102, 204, 255));
 
         javax.swing.GroupLayout jPanelOrdLayout = new javax.swing.GroupLayout(jPanelOrd);
         jPanelOrd.setLayout(jPanelOrdLayout);
         jPanelOrdLayout.setHorizontalGroup(
             jPanelOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelOrdLayout.createSequentialGroup()
-                .addGap(274, 274, 274)
-                .addComponent(jLabel1)
-                .addContainerGap(482, Short.MAX_VALUE))
+            .addGap(0, 838, Short.MAX_VALUE)
         );
         jPanelOrdLayout.setVerticalGroup(
             jPanelOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelOrdLayout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jLabel1)
-                .addContainerGap(334, Short.MAX_VALUE))
+            .addGap(0, 530, Short.MAX_VALUE)
+        );
+
+        jPanelTabPint.setBackground(new java.awt.Color(102, 204, 255));
+
+        jTablePint.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPanePint.setViewportView(jTablePint);
+
+        BtnAñadirPint.setText("Añadir");
+
+        BtnEliminarPint.setText("Eliminar");
+
+        BtnModificarPint.setText("Modificar");
+
+        javax.swing.GroupLayout jPanelTabPintLayout = new javax.swing.GroupLayout(jPanelTabPint);
+        jPanelTabPint.setLayout(jPanelTabPintLayout);
+        jPanelTabPintLayout.setHorizontalGroup(
+            jPanelTabPintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTabPintLayout.createSequentialGroup()
+                .addGroup(jPanelTabPintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelTabPintLayout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(jScrollPanePint, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelTabPintLayout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addComponent(BtnAñadirPint)
+                        .addGap(49, 49, 49)
+                        .addComponent(BtnEliminarPint)
+                        .addGap(42, 42, 42)
+                        .addComponent(BtnModificarPint)))
+                .addContainerGap(282, Short.MAX_VALUE))
+        );
+        jPanelTabPintLayout.setVerticalGroup(
+            jPanelTabPintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTabPintLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPanePint, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addGroup(jPanelTabPintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnAñadirPint)
+                    .addComponent(BtnEliminarPint)
+                    .addComponent(BtnModificarPint))
+                .addContainerGap(77, Short.MAX_VALUE))
+        );
+
+        jPanelTabSella.setBackground(new java.awt.Color(102, 204, 255));
+
+        jTableSella.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPaneSella.setViewportView(jTableSella);
+
+        BtnAñadirSella.setText("Añadir");
+
+        BtnEliminarSella.setText("Eliminar");
+
+        BtnModificarSella.setText("Modificar");
+
+        javax.swing.GroupLayout jPanelTabSellaLayout = new javax.swing.GroupLayout(jPanelTabSella);
+        jPanelTabSella.setLayout(jPanelTabSellaLayout);
+        jPanelTabSellaLayout.setHorizontalGroup(
+            jPanelTabSellaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTabSellaLayout.createSequentialGroup()
+                .addGroup(jPanelTabSellaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelTabSellaLayout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(jScrollPaneSella, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelTabSellaLayout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addComponent(BtnAñadirSella)
+                        .addGap(49, 49, 49)
+                        .addComponent(BtnEliminarSella)
+                        .addGap(42, 42, 42)
+                        .addComponent(BtnModificarSella)))
+                .addContainerGap(270, Short.MAX_VALUE))
+        );
+        jPanelTabSellaLayout.setVerticalGroup(
+            jPanelTabSellaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTabSellaLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPaneSella, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addGroup(jPanelTabSellaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnAñadirSella)
+                    .addComponent(BtnEliminarSella)
+                    .addComponent(BtnModificarSella))
+                .addContainerGap(65, Short.MAX_VALUE))
+        );
+
+        jPanelTabImper.setBackground(new java.awt.Color(102, 204, 255));
+
+        jTableImper.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPaneImper.setViewportView(jTableImper);
+
+        BtnAñadirImper.setText("Añadir");
+
+        BtnEliminarImper.setText("Eliminar");
+
+        BtnModificarImper.setText("Modificar");
+
+        javax.swing.GroupLayout jPanelTabImperLayout = new javax.swing.GroupLayout(jPanelTabImper);
+        jPanelTabImper.setLayout(jPanelTabImperLayout);
+        jPanelTabImperLayout.setHorizontalGroup(
+            jPanelTabImperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTabImperLayout.createSequentialGroup()
+                .addGroup(jPanelTabImperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelTabImperLayout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(jScrollPaneImper, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelTabImperLayout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addComponent(BtnAñadirImper)
+                        .addGap(49, 49, 49)
+                        .addComponent(BtnEliminarImper)
+                        .addGap(42, 42, 42)
+                        .addComponent(BtnModificarImper)))
+                .addContainerGap(258, Short.MAX_VALUE))
+        );
+        jPanelTabImperLayout.setVerticalGroup(
+            jPanelTabImperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTabImperLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPaneImper, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addGroup(jPanelTabImperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnAñadirImper)
+                    .addComponent(BtnEliminarImper)
+                    .addComponent(BtnModificarImper))
+                .addContainerGap(53, Short.MAX_VALUE))
+        );
+
+        jPanelTabMad.setBackground(new java.awt.Color(102, 204, 255));
+
+        jTableMad.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPaneMad.setViewportView(jTableMad);
+
+        BtnAñadirMad.setText("Añadir");
+
+        BtnEliminarMad.setText("Eliminar");
+
+        BtnModificarMad.setText("Modificar");
+
+        javax.swing.GroupLayout jPanelTabMadLayout = new javax.swing.GroupLayout(jPanelTabMad);
+        jPanelTabMad.setLayout(jPanelTabMadLayout);
+        jPanelTabMadLayout.setHorizontalGroup(
+            jPanelTabMadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTabMadLayout.createSequentialGroup()
+                .addGroup(jPanelTabMadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelTabMadLayout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(jScrollPaneMad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelTabMadLayout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addComponent(BtnAñadirMad)
+                        .addGap(49, 49, 49)
+                        .addComponent(BtnEliminarMad)
+                        .addGap(42, 42, 42)
+                        .addComponent(BtnModificarMad)))
+                .addContainerGap(246, Short.MAX_VALUE))
+        );
+        jPanelTabMadLayout.setVerticalGroup(
+            jPanelTabMadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTabMadLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPaneMad, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addGroup(jPanelTabMadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnAñadirMad)
+                    .addComponent(BtnEliminarMad)
+                    .addComponent(BtnModificarMad))
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+
+        jPanelTabAcceso.setBackground(new java.awt.Color(102, 204, 255));
+
+        jTableAcceso.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPaneAcceso.setViewportView(jTableAcceso);
+
+        BtnAñadirAcceso.setText("Añadir");
+
+        BtnEliminarAcceso.setText("Eliminar");
+
+        BtnModificarAcceso.setText("Modificar");
+
+        javax.swing.GroupLayout jPanelTabAccesoLayout = new javax.swing.GroupLayout(jPanelTabAcceso);
+        jPanelTabAcceso.setLayout(jPanelTabAccesoLayout);
+        jPanelTabAccesoLayout.setHorizontalGroup(
+            jPanelTabAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTabAccesoLayout.createSequentialGroup()
+                .addGroup(jPanelTabAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelTabAccesoLayout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(jScrollPaneAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelTabAccesoLayout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addComponent(BtnAñadirAcceso)
+                        .addGap(49, 49, 49)
+                        .addComponent(BtnEliminarAcceso)
+                        .addGap(42, 42, 42)
+                        .addComponent(BtnModificarAcceso)))
+                .addContainerGap(282, Short.MAX_VALUE))
+        );
+        jPanelTabAccesoLayout.setVerticalGroup(
+            jPanelTabAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTabAccesoLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPaneAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addGroup(jPanelTabAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnAñadirAcceso)
+                    .addComponent(BtnEliminarAcceso)
+                    .addComponent(BtnModificarAcceso))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelPrincipalLayout = new javax.swing.GroupLayout(jPanelPrincipal);
@@ -152,6 +541,31 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanelPrd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanelOrd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanelTabPint, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                    .addGap(12, 12, 12)
+                    .addComponent(jPanelTabSella, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(12, 12, 12)))
+            .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                    .addGap(18, 18, 18)
+                    .addComponent(jPanelTabImper, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(18, 18, 18)))
+            .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                    .addGap(24, 24, 24)
+                    .addComponent(jPanelTabMad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(24, 24, 24)))
+            .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                    .addGap(6, 6, 6)
+                    .addComponent(jPanelTabAcceso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(6, 6, 6)))
         );
         jPanelPrincipalLayout.setVerticalGroup(
             jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,6 +574,31 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanelPrd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanelOrd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanelTabPint, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                    .addGap(12, 12, 12)
+                    .addComponent(jPanelTabSella, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(12, 12, 12)))
+            .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                    .addGap(18, 18, 18)
+                    .addComponent(jPanelTabImper, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(18, 18, 18)))
+            .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                    .addGap(24, 24, 24)
+                    .addComponent(jPanelTabMad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(24, 24, 24)))
+            .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                    .addGap(6, 6, 6)
+                    .addComponent(jPanelTabAcceso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(6, 6, 6)))
         );
 
         MbMenu.setText("Menu");
@@ -239,6 +678,31 @@ public class FrmPrincipal extends javax.swing.JFrame {
         changePanel(jPanelOrd);
     }//GEN-LAST:event_MnItOrdActionPerformed
 
+    private void BtnPintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPintActionPerformed
+        // TODO add your handling code here:
+        changePanel(jPanelTabPint);
+    }//GEN-LAST:event_BtnPintActionPerformed
+
+    private void BtnSellaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSellaActionPerformed
+        // TODO add your handling code here:
+        changePanel(jPanelTabSella);
+    }//GEN-LAST:event_BtnSellaActionPerformed
+
+    private void BtnImperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnImperActionPerformed
+        // TODO add your handling code here:
+        changePanel(jPanelTabImper);
+    }//GEN-LAST:event_BtnImperActionPerformed
+
+    private void BtnMadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMadeActionPerformed
+        // TODO add your handling code here:
+        changePanel(jPanelTabMad);
+    }//GEN-LAST:event_BtnMadeActionPerformed
+
+    private void BtnAccesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAccesoActionPerformed
+        // TODO add your handling code here:
+        changePanel(jPanelTabAcceso);
+    }//GEN-LAST:event_BtnAccesoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -275,19 +739,57 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnAcceso;
+    private javax.swing.JButton BtnAñadirAcceso;
+    private javax.swing.JButton BtnAñadirImper;
+    private javax.swing.JButton BtnAñadirMad;
+    private javax.swing.JButton BtnAñadirPint;
+    private javax.swing.JButton BtnAñadirSella;
+    private javax.swing.JButton BtnEliminarAcceso;
+    private javax.swing.JButton BtnEliminarImper;
+    private javax.swing.JButton BtnEliminarMad;
+    private javax.swing.JButton BtnEliminarPint;
+    private javax.swing.JButton BtnEliminarSella;
+    private javax.swing.JButton BtnImper;
+    private javax.swing.JButton BtnMade;
+    private javax.swing.JButton BtnModificarAcceso;
+    private javax.swing.JButton BtnModificarImper;
+    private javax.swing.JButton BtnModificarMad;
+    private javax.swing.JButton BtnModificarPint;
+    private javax.swing.JButton BtnModificarSella;
+    private javax.swing.JButton BtnPint;
+    private javax.swing.JButton BtnSella;
     private javax.swing.JMenu MbInvt;
     private javax.swing.JMenu MbMenu;
     private javax.swing.JMenu MbVta;
     private javax.swing.JMenuItem MnItOrd;
     private javax.swing.JMenuItem MnItPaP;
     private javax.swing.JMenuItem MnItPrd;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanelOrd;
     private javax.swing.JPanel jPanelPaP;
     private javax.swing.JPanel jPanelPrd;
     private javax.swing.JPanel jPanelPrincipal;
+    private javax.swing.JPanel jPanelTabAcceso;
+    private javax.swing.JPanel jPanelTabImper;
+    private javax.swing.JPanel jPanelTabMad;
+    private javax.swing.JPanel jPanelTabPint;
+    private javax.swing.JPanel jPanelTabSella;
+    private javax.swing.JScrollPane jScrollPaneAcceso;
+    private javax.swing.JScrollPane jScrollPaneImper;
+    private javax.swing.JScrollPane jScrollPaneMad;
+    private javax.swing.JScrollPane jScrollPanePint;
+    private javax.swing.JScrollPane jScrollPaneSella;
+    private javax.swing.JTable jTableAcceso;
+    private javax.swing.JTable jTableImper;
+    private javax.swing.JTable jTableMad;
+    private javax.swing.JTable jTablePint;
+    private javax.swing.JTable jTableSella;
     // End of variables declaration//GEN-END:variables
 }

@@ -121,10 +121,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jPanelPaP.setLayout(jPanelPaPLayout);
         jPanelPaPLayout.setHorizontalGroup(
             jPanelPaPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelPaPLayout.createSequentialGroup()
-                .addGap(251, 251, 251)
-                .addComponent(jLabel3)
-                .addContainerGap(437, Short.MAX_VALUE))
             .addGap(0, 850, Short.MAX_VALUE)
         );
         jPanelPaPLayout.setVerticalGroup(

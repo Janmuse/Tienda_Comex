@@ -134,7 +134,7 @@ public class FrmPrincipal extends FrameABC {
 
         jLabel2.setText("Categorias");
 
-        BtnPint.setIcon(new javax.swing.ImageIcon("C:\\Users\\Blayder510\\Pictures\\Iconos TP\\pint2.jpg")); // NOI18N
+        BtnPint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pint2.jpg"))); // NOI18N
         BtnPint.setText("BtnPint");
         BtnPint.setName(""); // NOI18N
         BtnPint.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +143,7 @@ public class FrmPrincipal extends FrameABC {
             }
         });
 
-        BtnSella.setIcon(new javax.swing.ImageIcon("C:\\Users\\Blayder510\\Pictures\\Iconos TP\\Sellador2.jpg")); // NOI18N
+        BtnSella.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Sellador2.jpg"))); // NOI18N
         BtnSella.setText("BtnSella");
         BtnSella.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,7 +151,7 @@ public class FrmPrincipal extends FrameABC {
             }
         });
 
-        BtnImper.setIcon(new javax.swing.ImageIcon("C:\\Users\\Blayder510\\Pictures\\Iconos TP\\impermi2.jpg")); // NOI18N
+        BtnImper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/impermi2.jpg"))); // NOI18N
         BtnImper.setText("BtnImper");
         BtnImper.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,7 +165,7 @@ public class FrmPrincipal extends FrameABC {
 
         jLabel6.setText("Impermeabilizantes");
 
-        BtnMade.setIcon(new javax.swing.ImageIcon("C:\\Users\\Blayder510\\Pictures\\Iconos TP\\Maderas2.jpg")); // NOI18N
+        BtnMade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Maderas2.jpg"))); // NOI18N
         BtnMade.setText("BtnMade");
         BtnMade.setName(""); // NOI18N
         BtnMade.addActionListener(new java.awt.event.ActionListener() {
@@ -174,7 +174,7 @@ public class FrmPrincipal extends FrameABC {
             }
         });
 
-        BtnAcceso.setIcon(new javax.swing.ImageIcon("C:\\Users\\Blayder510\\Pictures\\Iconos TP\\accesorios2.png")); // NOI18N
+        BtnAcceso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/accesorios2.png"))); // NOI18N
         BtnAcceso.setText("BtnAcceso");
         BtnAcceso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -191,17 +191,17 @@ public class FrmPrincipal extends FrameABC {
         jPanelPrdLayout.setHorizontalGroup(
             jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPrdLayout.createSequentialGroup()
+                .addGap(145, 145, 145)
                 .addGroup(jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelPrdLayout.createSequentialGroup()
-                        .addGap(145, 145, 145)
+                        .addGap(0, 33, Short.MAX_VALUE)
                         .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+                        .addGap(118, 118, 118)
                         .addComponent(jLabel5)
                         .addGap(91, 91, 91))
                     .addGroup(jPanelPrdLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BtnPint, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(79, 79, 79)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BtnSella, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(62, 62, 62)))
                 .addGroup(jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,7 +209,7 @@ public class FrmPrincipal extends FrameABC {
                         .addGap(6, 6, 6)
                         .addComponent(jLabel6))
                     .addComponent(BtnImper, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(258, Short.MAX_VALUE))
+                .addContainerGap(270, Short.MAX_VALUE))
             .addGroup(jPanelPrdLayout.createSequentialGroup()
                 .addGroup(jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelPrdLayout.createSequentialGroup()
@@ -218,21 +218,21 @@ public class FrmPrincipal extends FrameABC {
                         .addGap(81, 81, 81)
                         .addComponent(BtnAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelPrdLayout.createSequentialGroup()
-                        .addGap(328, 328, 328)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanelPrdLayout.createSequentialGroup()
                         .addGap(235, 235, 235)
                         .addComponent(jLabel7)
                         .addGap(139, 139, 139)
-                        .addComponent(jLabel8)))
+                        .addComponent(jLabel8))
+                    .addGroup(jPanelPrdLayout.createSequentialGroup()
+                        .addGap(345, 345, 345)
+                        .addComponent(jLabel2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelPrdLayout.setVerticalGroup(
             jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPrdLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(46, 46, 46)
                 .addComponent(jLabel2)
-                .addGap(42, 42, 42)
+                .addGap(40, 40, 40)
                 .addGroup(jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnSella, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnPint, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -676,30 +676,30 @@ public class FrmPrincipal extends FrameABC {
         changePanel(jPanelOrd);
     }//GEN-LAST:event_MnItOrdActionPerformed
 
-    private void BtnPintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPintActionPerformed
+    private void BtnAccesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAccesoActionPerformed
         // TODO add your handling code here:
-        changePanel(jPanelTabPint);
-    }//GEN-LAST:event_BtnPintActionPerformed
-
-    private void BtnSellaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSellaActionPerformed
-        // TODO add your handling code here:
-        changePanel(jPanelTabSella);
-    }//GEN-LAST:event_BtnSellaActionPerformed
-
-    private void BtnImperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnImperActionPerformed
-        // TODO add your handling code here:
-        changePanel(jPanelTabImper);
-    }//GEN-LAST:event_BtnImperActionPerformed
+        changePanel(jPanelTabAcceso);
+    }//GEN-LAST:event_BtnAccesoActionPerformed
 
     private void BtnMadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMadeActionPerformed
         // TODO add your handling code here:
         changePanel(jPanelTabMad);
     }//GEN-LAST:event_BtnMadeActionPerformed
 
-    private void BtnAccesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAccesoActionPerformed
+    private void BtnImperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnImperActionPerformed
         // TODO add your handling code here:
-        changePanel(jPanelTabAcceso);
-    }//GEN-LAST:event_BtnAccesoActionPerformed
+        changePanel(jPanelTabImper);
+    }//GEN-LAST:event_BtnImperActionPerformed
+
+    private void BtnSellaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSellaActionPerformed
+        // TODO add your handling code here:
+        changePanel(jPanelTabSella);
+    }//GEN-LAST:event_BtnSellaActionPerformed
+
+    private void BtnPintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPintActionPerformed
+        // TODO add your handling code here:
+        changePanel(jPanelTabPint);
+    }//GEN-LAST:event_BtnPintActionPerformed
 
     /**
      * @param args the command line arguments

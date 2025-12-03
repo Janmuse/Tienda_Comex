@@ -315,9 +315,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="BtnPint">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Blayder510\Pictures\Iconos TP\pint2.jpg"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="BtnPint"/>
                 <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
@@ -327,9 +324,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="BtnSella">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Blayder510\Pictures\Iconos TP\Sellador2.jpg"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="BtnSella"/>
               </Properties>
               <Events>
@@ -338,9 +332,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="BtnImper">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Blayder510\Pictures\Iconos TP\impermi2.jpg"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="BtnImper"/>
               </Properties>
               <Events>
@@ -364,9 +355,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="BtnMade">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Blayder510\Pictures\Iconos TP\Maderas2.jpg"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="BtnMade"/>
                 <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
@@ -376,9 +364,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="BtnAcceso">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Blayder510\Pictures\Iconos TP\accesorios2.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="BtnAcceso"/>
               </Properties>
               <Events>

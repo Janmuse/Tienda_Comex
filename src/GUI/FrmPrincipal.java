@@ -4,19 +4,21 @@
  */
 package GUI;
 
+import Clases_Abstractas.FrameABC;
 import javax.swing.JPanel;
 
 /**
  *
  * @author Blayder510
  */
-public class FrmPrincipal extends javax.swing.JFrame {
+public class FrmPrincipal extends FrameABC {
 
     /**
      * Creates new form FrmPrincipal
      */
     public FrmPrincipal() {
         initComponents();
+
     }
     
     private void changePanel(JPanel jPanel){

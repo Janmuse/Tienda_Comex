@@ -211,7 +211,7 @@ public class FrmAgregarDatos extends FrameABC {
 
     private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
         // TODO add your handling code here:
-        insertarDatos();
+        //insertarDatos();
     }//GEN-LAST:event_BtnGuardarActionPerformed
 
     /**
@@ -251,7 +251,7 @@ public class FrmAgregarDatos extends FrameABC {
             }
         });
     }
-    
+    /*
     @Override
     public void insertarDatos() {
     try {
@@ -280,7 +280,7 @@ public class FrmAgregarDatos extends FrameABC {
         javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
     }
  }
-
+*/
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnGuardar;
     private javax.swing.JLabel jLabel2;

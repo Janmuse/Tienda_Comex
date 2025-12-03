@@ -40,9 +40,10 @@ public abstract class FrameABC extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
 //AQUI EMPIEZAN NUESTROS MÉTODOS
     
-public abstract void insertarDatos();
+//public abstract void insertarDatos();
 //FIN DEL CODIGO
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables

@@ -80,13 +80,15 @@ public class FrmPrincipal extends FrameABC {
         jPanelTabPint = new javax.swing.JPanel();
         BtnModifiPint = new javax.swing.JButton();
         jScrollPanePint = new javax.swing.JScrollPane();
-        TBLPinturas = new javax.swing.JTable();
+        JTablePinturas = new javax.swing.JTable();
         BtnAtrasPint = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanelTabSella = new javax.swing.JPanel();
         BtnModifiSella = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         BtnAtrasSella = new javax.swing.JButton();
+        jScrollPaneSella = new javax.swing.JScrollPane();
+        jTableSella = new javax.swing.JTable();
         jPanelTabImper = new javax.swing.JPanel();
         jScrollPaneImper = new javax.swing.JScrollPane();
         jTableImper = new javax.swing.JTable();
@@ -275,7 +277,7 @@ public class FrmPrincipal extends FrameABC {
         jPanelPrdLayout.setHorizontalGroup(
             jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPrdLayout.createSequentialGroup()
-                .addGap(130, 130, Short.MAX_VALUE)
+                .addGap(136, 136, Short.MAX_VALUE)
                 .addGroup(jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPrdLayout.createSequentialGroup()
                         .addComponent(jLabel4)
@@ -294,7 +296,7 @@ public class FrmPrincipal extends FrameABC {
                     .addGroup(jPanelPrdLayout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(BtnImper, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addContainerGap(179, Short.MAX_VALUE))
             .addGroup(jPanelPrdLayout.createSequentialGroup()
                 .addGap(231, 231, 231)
                 .addGroup(jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -306,8 +308,7 @@ public class FrmPrincipal extends FrameABC {
                         .addGap(19, 19, 19)
                         .addComponent(jLabel7)
                         .addGap(129, 129, 129)
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel8)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanelPrdLayout.createSequentialGroup()
                 .addGap(297, 297, 297)
@@ -366,7 +367,7 @@ public class FrmPrincipal extends FrameABC {
             }
         });
 
-        TBLPinturas.setModel(new javax.swing.table.DefaultTableModel(
+        JTablePinturas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
@@ -377,7 +378,7 @@ public class FrmPrincipal extends FrameABC {
                 "ID_Pintura", "Nombre ", "Tipo Pintura ", "Acabado ", "Presentación ", "Cantidad Unidad ", "Unidad Medida ", "Precio ", "Cantidad "
             }
         ));
-        jScrollPanePint.setViewportView(TBLPinturas);
+        jScrollPanePint.setViewportView(JTablePinturas);
 
         BtnAtrasPint.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         BtnAtrasPint.setText("Regresar");
@@ -424,7 +425,7 @@ public class FrmPrincipal extends FrameABC {
                 .addComponent(jScrollPanePint, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(BtnModifiPint)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         jPanelTabSella.setBackground(new java.awt.Color(102, 204, 255));
@@ -450,6 +451,19 @@ public class FrmPrincipal extends FrameABC {
             }
         });
 
+        jTableSella.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID_Sellador", "Nombre", "Tipo", "Presentación", "Cantidad_Por_Unidad", "Unidad_Medida", "Precio", "Cantidad"
+            }
+        ));
+        jScrollPaneSella.setViewportView(jTableSella);
+
         javax.swing.GroupLayout jPanelTabSellaLayout = new javax.swing.GroupLayout(jPanelTabSella);
         jPanelTabSella.setLayout(jPanelTabSellaLayout);
         jPanelTabSellaLayout.setHorizontalGroup(
@@ -466,7 +480,12 @@ public class FrmPrincipal extends FrameABC {
                     .addGroup(jPanelTabSellaLayout.createSequentialGroup()
                         .addGap(344, 344, 344)
                         .addComponent(BtnModifiSella)))
-                .addContainerGap(297, Short.MAX_VALUE))
+                .addContainerGap(316, Short.MAX_VALUE))
+            .addGroup(jPanelTabSellaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelTabSellaLayout.createSequentialGroup()
+                    .addGap(22, 22, 22)
+                    .addComponent(jScrollPaneSella, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(22, Short.MAX_VALUE)))
         );
         jPanelTabSellaLayout.setVerticalGroup(
             jPanelTabSellaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -475,9 +494,14 @@ public class FrmPrincipal extends FrameABC {
                 .addComponent(BtnAtrasSella)
                 .addGap(7, 7, 7)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 330, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 328, Short.MAX_VALUE)
                 .addComponent(BtnModifiSella)
                 .addGap(72, 72, 72))
+            .addGroup(jPanelTabSellaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelTabSellaLayout.createSequentialGroup()
+                    .addGap(79, 79, 79)
+                    .addComponent(jScrollPaneSella, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(80, Short.MAX_VALUE)))
         );
 
         jPanelTabImper.setBackground(new java.awt.Color(102, 204, 255));
@@ -485,13 +509,13 @@ public class FrmPrincipal extends FrameABC {
 
         jTableImper.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID_Impermeabilizante", "Nombre", "Tipo_Imper", "Presentación", "Cantidad_Por_Unidad", "Unidad_Medida", "Precio", "Cantidad"
             }
         ));
         jScrollPaneImper.setViewportView(jTableImper);
@@ -533,9 +557,9 @@ public class FrmPrincipal extends FrameABC {
                         .addGap(351, 351, 351)
                         .addComponent(BtnModifiImper))
                     .addGroup(jPanelTabImperLayout.createSequentialGroup()
-                        .addGap(172, 172, 172)
-                        .addComponent(jScrollPaneImper, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(176, Short.MAX_VALUE))
+                        .addGap(21, 21, 21)
+                        .addComponent(jScrollPaneImper, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanelTabImperLayout.setVerticalGroup(
             jPanelTabImperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -548,7 +572,7 @@ public class FrmPrincipal extends FrameABC {
                 .addComponent(jScrollPaneImper, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BtnModifiImper)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         jPanelTabMad.setBackground(new java.awt.Color(102, 204, 255));
@@ -556,13 +580,13 @@ public class FrmPrincipal extends FrameABC {
 
         jTableMad.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID_Madera", "Nombre", "Tipo", "Presentación", "Cantidad_Por_Unidad", "Unidad_Medida", "Precio", "Cantidad"
             }
         ));
         jScrollPaneMad.setViewportView(jTableMad);
@@ -601,17 +625,17 @@ public class FrmPrincipal extends FrameABC {
                                 .addGap(261, 261, 261)
                                 .addComponent(jLabel10))))
                     .addGroup(jPanelTabMadLayout.createSequentialGroup()
-                        .addGap(184, 184, 184)
-                        .addComponent(jScrollPaneMad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelTabMadLayout.createSequentialGroup()
                         .addGap(358, 358, 358)
-                        .addComponent(BtnModifiMad)))
-                .addContainerGap(164, Short.MAX_VALUE))
+                        .addComponent(BtnModifiMad))
+                    .addGroup(jPanelTabMadLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jScrollPaneMad, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanelTabMadLayout.setVerticalGroup(
             jPanelTabMadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelTabMadLayout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BtnAtrasMad)
                 .addGap(7, 7, 7)
                 .addComponent(jLabel10)
@@ -627,13 +651,13 @@ public class FrmPrincipal extends FrameABC {
 
         jTableAcceso.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID_Accesorio", "Nombre", "TIpo", "Precio", "Cantidad"
             }
         ));
         jScrollPaneAcceso.setViewportView(jTableAcceso);
@@ -690,7 +714,7 @@ public class FrmPrincipal extends FrameABC {
                 .addComponent(jScrollPaneAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BtnModifiAcceso)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jPanelAmePint.setBackground(new java.awt.Color(255, 255, 255));
@@ -1432,19 +1456,19 @@ public class FrmPrincipal extends FrameABC {
                     .addGap(0, 0, Short.MAX_VALUE)))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPrincipalLayout.createSequentialGroup()
-                    .addContainerGap(16, Short.MAX_VALUE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelAmeImper, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPrincipalLayout.createSequentialGroup()
-                    .addContainerGap(26, Short.MAX_VALUE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelAmeMad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jPanelAmeAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(16, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanelPrincipalLayout.setVerticalGroup(
             jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1749,7 +1773,7 @@ public class FrmPrincipal extends FrameABC {
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM pinturas_y_recubrimientos");
 
-            DefaultTableModel modelo = (DefaultTableModel) TBLPinturas.getModel();
+            DefaultTableModel modelo = (DefaultTableModel) JTablePinturas.getModel();
 
             modelo.setRowCount(0); // limpia la tabla
 
@@ -1816,13 +1840,13 @@ public class FrmPrincipal extends FrameABC {
     private javax.swing.JButton BtnModificarSella;
     private javax.swing.JButton BtnPint;
     private javax.swing.JButton BtnSella;
+    private javax.swing.JTable JTablePinturas;
     private javax.swing.JMenu MbInvt;
     private javax.swing.JMenu MbMenu;
     private javax.swing.JMenu MbVta;
     private javax.swing.JMenuItem MnItOrd;
     private javax.swing.JMenuItem MnItPaP;
     private javax.swing.JMenuItem MnItPrd;
-    private javax.swing.JTable TBLPinturas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1893,9 +1917,11 @@ public class FrmPrincipal extends FrameABC {
     private javax.swing.JScrollPane jScrollPaneImper;
     private javax.swing.JScrollPane jScrollPaneMad;
     private javax.swing.JScrollPane jScrollPanePint;
+    private javax.swing.JScrollPane jScrollPaneSella;
     private javax.swing.JTable jTableAcceso;
     private javax.swing.JTable jTableImper;
     private javax.swing.JTable jTableMad;
+    private javax.swing.JTable jTableSella;
     private javax.swing.JTextField jTextFieldEliminarIDAcceso;
     private javax.swing.JTextField jTextFieldEliminarIDImper;
     private javax.swing.JTextField jTextFieldEliminarIDMad;

@@ -64,6 +64,7 @@ public class FrmPrincipal extends FrameABC {
 
         jPanelPrincipal = new javax.swing.JPanel();
         jPanelPaP = new javax.swing.JPanel();
+        jLabelPapFondo = new javax.swing.JLabel();
         jPanelPrd = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         BtnPint = new javax.swing.JButton();
@@ -355,6 +356,7 @@ public class FrmPrincipal extends FrameABC {
         MnItOrd = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(825, 565));
 
         jPanelPrincipal.setBackground(new java.awt.Color(51, 255, 51));
         jPanelPrincipal.setPreferredSize(new java.awt.Dimension(800, 500));
@@ -362,15 +364,23 @@ public class FrmPrincipal extends FrameABC {
         jPanelPaP.setBackground(new java.awt.Color(102, 204, 255));
         jPanelPaP.setPreferredSize(new java.awt.Dimension(800, 500));
 
+        jLabelPapFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoPrincipal.jpg"))); // NOI18N
+        jLabelPapFondo.setText("jLabel12");
+        jLabelPapFondo.setPreferredSize(new java.awt.Dimension(800, 500));
+
         javax.swing.GroupLayout jPanelPaPLayout = new javax.swing.GroupLayout(jPanelPaP);
         jPanelPaP.setLayout(jPanelPaPLayout);
         jPanelPaPLayout.setHorizontalGroup(
             jPanelPaPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(jPanelPaPLayout.createSequentialGroup()
+                .addComponent(jLabelPapFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanelPaPLayout.setVerticalGroup(
             jPanelPaPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 521, Short.MAX_VALUE)
+            .addGroup(jPanelPaPLayout.createSequentialGroup()
+                .addComponent(jLabelPapFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanelPrd.setBackground(new java.awt.Color(102, 204, 255));
@@ -460,7 +470,7 @@ public class FrmPrincipal extends FrameABC {
                     .addGroup(jPanelPrdLayout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(BtnImper, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(179, Short.MAX_VALUE))
+                .addContainerGap(167, Short.MAX_VALUE))
             .addGroup(jPanelPrdLayout.createSequentialGroup()
                 .addGap(231, 231, 231)
                 .addGroup(jPanelPrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -723,7 +733,7 @@ public class FrmPrincipal extends FrameABC {
                     .addGroup(jPanelTabImperLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jScrollPaneImper, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelTabImperLayout.setVerticalGroup(
             jPanelTabImperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -794,7 +804,7 @@ public class FrmPrincipal extends FrameABC {
                     .addGroup(jPanelTabMadLayout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(jScrollPaneMad, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelTabMadLayout.setVerticalGroup(
             jPanelTabMadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2293,38 +2303,35 @@ public class FrmPrincipal extends FrameABC {
                                 .addComponent(jLabelAgregarPresentacionAcceso)
                                 .addGap(18, 18, 18)
                                 .addComponent(jTextFieldAgregarPresenAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarAccesoLayout.createSequentialGroup()
+                                    .addComponent(jLabelAgregarTipoAcceso)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jTextFieldAgregarTipoAcceso))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarAccesoLayout.createSequentialGroup()
+                                    .addComponent(jLabelAgregarIDAcceso)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jTextFieldAgregarIDAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarAccesoLayout.createSequentialGroup()
+                                    .addComponent(jLabelAgregarNomAcceso)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jTextFieldAgregarNomAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
-                                .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarAccesoLayout.createSequentialGroup()
-                                            .addComponent(jLabelAgregarTipoAcceso)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jTextFieldAgregarTipoAcceso))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarAccesoLayout.createSequentialGroup()
-                                            .addComponent(jLabelAgregarIDAcceso)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jTextFieldAgregarIDAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarAccesoLayout.createSequentialGroup()
-                                            .addComponent(jLabelAgregarNomAcceso)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(jTextFieldAgregarNomAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
-                                        .addComponent(jLabelAgregarCantidadAcceso)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextFieldAgregarCantAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
-                                        .addComponent(jLabelAgregarPrecioAcceso)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextFieldAgregarPrecioAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
-                                        .addComponent(jLabelAgregarUniMedAcceso)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextFieldAgregarUniMedAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
-                                        .addComponent(jLabelAgregarCantUniAcceso)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextFieldAgregarCantUniAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jLabelAgregarCantidadAcceso)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextFieldAgregarCantAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
+                                .addComponent(jLabelAgregarPrecioAcceso)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextFieldAgregarPrecioAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
+                                .addComponent(jLabelAgregarUniMedAcceso)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldAgregarUniMedAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
+                                .addComponent(jLabelAgregarCantUniAcceso)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldAgregarCantUniAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanelAgregarAccesoLayout.setVerticalGroup(
@@ -3130,6 +3137,7 @@ public class FrmPrincipal extends FrameABC {
     private javax.swing.JLabel jLabelModificarUniMedMad;
     private javax.swing.JLabel jLabelModificarUniMedPint;
     private javax.swing.JLabel jLabelModificarUniMedSella;
+    private javax.swing.JLabel jLabelPapFondo;
     private javax.swing.JLabel jLabelPint;
     private javax.swing.JLabel jLabelSella;
     private javax.swing.JMenuBar jMenuBar1;

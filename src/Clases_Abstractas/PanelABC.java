@@ -44,7 +44,6 @@ Los hicimos protected para mantener modularidad
     //usamos object porque recibe distintos tipos de datos
 //FIN DE LOS MÉTODOS ABSTRACTOS
     
-    
 /*----------------------------------
 METODOS CONCRETOS, NO SE LES HACE OVERRIDE
 ----------------------------------*/

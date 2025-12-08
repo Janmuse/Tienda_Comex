@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Clases_Simples;
 
-/**
- *
- * @author HP_25
-*/
 import Clases_Abstractas.PanelABC;
 import Interfaces.cargarDatos;
 import java.sql.Connection;
@@ -17,8 +9,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-
-public class PanelABCSella extends PanelABC implements cargarDatos{
+public class PanelABCSella extends PanelABC implements cargarDatos {
     private JTextField txtNombre;
     private JTextField txtTipo;
     private JTextField txtPresentacion;
@@ -32,16 +23,16 @@ public class PanelABCSella extends PanelABC implements cargarDatos{
                     JTextField txtPresentacion, JTextField txtCantidadUnidad,
                     JTextField txtUnidadMedida, JTextField txtPrecio,
                     JTextField txtCantidad, JTable tabla) {
-    super();
-    this.txtNombre = txtNombre;
-    this.txtTipo = txtTipo;
-    this.txtPresentacion = txtPresentacion;
-    this.txtCantidadUnidad = txtCantidadUnidad;
-    this.txtUnidadMedida = txtUnidadMedida;
-    this.txtPrecio = txtPrecio;
-    this.txtCantidad = txtCantidad;
-    this.tablaSelladores = tabla;
-    cargarDatos();
+        super();
+        this.txtNombre = txtNombre;
+        this.txtTipo = txtTipo;
+        this.txtPresentacion = txtPresentacion;
+        this.txtCantidadUnidad = txtCantidadUnidad;
+        this.txtUnidadMedida = txtUnidadMedida;
+        this.txtPrecio = txtPrecio;
+        this.txtCantidad = txtCantidad;
+        this.tablaSelladores = tabla;
+        cargarDatosIniciales();
     }
 
     @Override
@@ -69,7 +60,6 @@ public class PanelABCSella extends PanelABC implements cargarDatos{
 
     @Override
     protected boolean validarCampos() {
-        // Validar campos vacíos
         if (!campoNoVacio(txtNombre, "Nombre") ||
             !campoNoVacio(txtTipo, "Tipo") ||
             !campoNoVacio(txtPresentacion, "Presentación") ||
@@ -77,7 +67,6 @@ public class PanelABCSella extends PanelABC implements cargarDatos{
             return false;
         }
         
-        // Validar números
         if (!esEnteroValido(txtCantidadUnidad, "Cantidad por Unidad") ||
             !esEnteroValido(txtPrecio, "Precio") ||
             !esEnteroValido(txtCantidad, "Cantidad")) {
@@ -95,35 +84,6 @@ public class PanelABCSella extends PanelABC implements cargarDatos{
         txtUnidadMedida.setText("");
         txtPrecio.setText("");
         txtCantidad.setText("");
-        
-        try {
-        Connection con = Conexion.getConexion();
-        Statement st = con.createStatement();
-        ResultSet rs = st.executeQuery("SELECT * FROM selladores");
-
-        DefaultTableModel modelo = (DefaultTableModel) tablaSelladores.getModel();
-
-        modelo.setRowCount(0);
-        while (rs.next()) {
-                Object[] columna = new Object[8];
-
-                columna[0] = rs.getInt("ID_Sellador");
-                columna[1] = rs.getString("Nombre");
-                columna[2] = rs.getString("Tipo");
-                columna[3] = rs.getString("Presentacion");
-                columna[4] = rs.getInt("Cantidad_Por_Unidad");
-                columna[5] = rs.getString("Unidad_Medida");
-                columna[6] = rs.getDouble("Precio");
-                columna[7] = rs.getInt("Cantidad");
-
-                modelo.addRow(columna);
-            }
-            rs.close();
-            st.close();
-            con.close();
-        } catch (Exception e) {
-            mostrarError("Error al cargar datos: " + e.getMessage());
-        }    
     }
 
     @Override
@@ -141,14 +101,21 @@ public class PanelABCSella extends PanelABC implements cargarDatos{
 
     @Override
     public void cargarDatos() {
+        Connection con = null;
+        Statement st = null;
+        ResultSet rs = null;
+        
         try {
-            Connection con = Conexion.getConexion();
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM selladores");
+            // CORRECCIÓN: Sin cast innecesario
+            con = Conexion.getConexion();
+            st = con.createStatement();
+            rs = st.executeQuery("SELECT * FROM selladores");
 
             DefaultTableModel modelo = (DefaultTableModel) tablaSelladores.getModel();
             
+            // Limpiar tabla antes de cargar
             modelo.setRowCount(0);
+            
             while (rs.next()) {
                 Object[] columna = new Object[8];
 
@@ -158,18 +125,26 @@ public class PanelABCSella extends PanelABC implements cargarDatos{
                 columna[3] = rs.getString("Presentacion");
                 columna[4] = rs.getInt("Cantidad_Por_Unidad");
                 columna[5] = rs.getString("Unidad_Medida");
-                columna[6] = rs.getDouble("Precio");
+                columna[6] = rs.getInt("Precio");
                 columna[7] = rs.getInt("Cantidad");
 
                 modelo.addRow(columna);
             }
             
-            rs.close();
-            st.close();
-            con.close();
+            System.out.println("Datos cargados exitosamente. Filas: " + modelo.getRowCount());
+            
         } catch (Exception e) {
+            System.out.println("Error al cargar datos: " + e.getMessage());
+            e.printStackTrace();
             mostrarError("Error al cargar datos: " + e.getMessage());
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (st != null) st.close();
+                if (con != null) con.close();
+            } catch (Exception e) {
+                System.out.println("Error al cerrar conexión: " + e.getMessage());
+            }
         }
     }
 }
-

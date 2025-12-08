@@ -4,7 +4,7 @@
  */
 package GUI;
 
-import Clases_Abstractas.FrameABC;
+import Clases_Abstractas.PanelABC;
 import Clases_Simples.Conexion;
 import javax.swing.JPanel;
 import java.sql.*;
@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Blayder510
  */
-public class FrmPrincipal extends FrameABC {
+public class FrmPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form FrmPrincipal

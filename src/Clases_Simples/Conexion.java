@@ -11,22 +11,16 @@ import java.sql.SQLException;
 
 public class Conexion {
 
-    public static Connection con;
+public static Connection con;
 
-    public static Connection getConexion() {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/tienda_pinturas?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true",
-                "root",
-                "zapato123"
-                   
-            );
-        } catch (ClassNotFoundException | SQLException e) {
-            System.out.println("Error al conectar: " + e.getMessage());
-        }
-        return con;
-    }
+public static Connection getConexion() throws SQLException {
+    return DriverManager.getConnection(
+        "jdbc:mysql://localhost:3306/tienda_pinturas?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true",
+        "root",
+        "zapato123"
+    );
+    
+}
 }
 
 

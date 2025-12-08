@@ -55,11 +55,9 @@ METODOS CONCRETOS, NO SE LES HACE OVERRIDE
         }
 
         try {
-            // Construir SQL INSERT dinámico
             String sql = construirSQLInsert();
             System.out.println("Ejecutando: " + sql);
 
-            // Aquí iría la ejecución real en BD
             boolean exito = ejecutarSQL(sql);
             if (exito) {
                 mostrarMensaje("Registro agregado exitosamente");
@@ -85,7 +83,7 @@ METODOS CONCRETOS, NO SE LES HACE OVERRIDE
             System.out.println("Ejecutando: " + sql);
             
             // Ejecución en BD
-            boolean exito = true; // Simulado
+            boolean exito = ejecutarSQL(sql);
             
             if (exito) {
                 mostrarMensaje("Registro eliminado exitosamente");
@@ -98,7 +96,7 @@ METODOS CONCRETOS, NO SE LES HACE OVERRIDE
         return false;
     }
     
-     public boolean Cambio(int id) {
+    public boolean Cambio(int id) {
         if (!validarCampos()) {
             mostrarError("Validación falló: " + mensajeError);
             return false;
@@ -109,7 +107,7 @@ METODOS CONCRETOS, NO SE LES HACE OVERRIDE
             System.out.println("Ejecutando: " + sql);
             
             // Ejecución en BD
-            boolean exito = true; // Simulado
+            boolean exito = ejecutarSQL(sql);
             
             if (exito) {
                 mostrarMensaje("Registro actualizado exitosamente");
@@ -122,7 +120,14 @@ METODOS CONCRETOS, NO SE LES HACE OVERRIDE
         return false;
     }
 //FIN ABC
+    
 
+    public void cargarDatosIniciales() {
+        if (!seCargaronDatos) {
+            cargarDatos();
+            seCargaronDatos = true;
+        }
+    }
 //FUNCIONES AUXILIARES AL ABC
     protected boolean ejecutarSQL(String sqlStmt ){
         try (
@@ -165,7 +170,6 @@ METODOS CONCRETOS, NO SE LES HACE OVERRIDE
         sqlStmt = sqlStmt + ")";
         return sqlStmt;
     }
-
     protected String construirSQLUpdate(int id) {
         String[] columnas = getNombresColumnas();
         Object[] valores = getValoresDeCampos();

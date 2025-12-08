@@ -2,12 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package GUI;
+package Clases_Simples;
 
-import Clases_Abstractas.PanelABC;
-import Clases_Simples.Conexion;
 import javax.swing.JPanel;
 import java.sql.*;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -20,7 +19,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
      */
     public FrmPrincipal() {
         initComponents();
-        cargarDatosTBLPinturas();
+ 
+
     }
     
     private void changePanel(JPanel jPanel){
@@ -112,7 +112,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jPanelAgregarPint = new javax.swing.JPanel();
         jLabelAgregarPint = new javax.swing.JLabel();
         BtnAñadirPint = new javax.swing.JButton();
-        jLabelAgregarIDPint = new javax.swing.JLabel();
         jLabelAgregarNomPint = new javax.swing.JLabel();
         jLabelAgregarTipoPint = new javax.swing.JLabel();
         jLabelAgregarAcabadoPint = new javax.swing.JLabel();
@@ -121,7 +120,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabelAgregarUniMedPint = new javax.swing.JLabel();
         jLabelAgregarPrecioPint = new javax.swing.JLabel();
         jLabelAgregarCantidadPint = new javax.swing.JLabel();
-        jTextFieldAgregarIDPint = new javax.swing.JTextField();
         jTextFieldAgregarNomPint = new javax.swing.JTextField();
         jTextFieldAgregarTipoPint = new javax.swing.JTextField();
         jTextFieldAgregarAcabadoPint = new javax.swing.JTextField();
@@ -356,7 +354,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         MnItOrd = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(825, 565));
 
         jPanelPrincipal.setBackground(new java.awt.Color(51, 255, 51));
         jPanelPrincipal.setPreferredSize(new java.awt.Dimension(800, 500));
@@ -374,13 +371,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
             jPanelPaPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPaPLayout.createSequentialGroup()
                 .addComponent(jLabelPapFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 13, Short.MAX_VALUE))
         );
         jPanelPaPLayout.setVerticalGroup(
             jPanelPaPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPaPLayout.createSequentialGroup()
                 .addComponent(jLabelPapFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 42, Short.MAX_VALUE))
         );
 
         jPanelPrd.setBackground(new java.awt.Color(102, 204, 255));
@@ -552,6 +549,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 "ID_Pintura", "Nombre ", "Tipo Pintura ", "Acabado ", "Presentación ", "Cantidad Unidad ", "Unidad Medida ", "Precio ", "Cantidad "
             }
         ));
+        JTablePinturas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                JTablePinturasMouseEntered(evt);
+            }
+        });
         jScrollPanePint.setViewportView(JTablePinturas);
 
         BtnAtrasPint.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -904,9 +906,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         BtnAñadirPint.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         BtnAñadirPint.setText("Aceptar");
-
-        jLabelAgregarIDPint.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelAgregarIDPint.setText("ID:");
+        BtnAñadirPint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAñadirPintActionPerformed(evt);
+            }
+        });
 
         jLabelAgregarNomPint.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelAgregarNomPint.setText("Nombre:");
@@ -937,69 +941,58 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jPanelAgregarPintLayout.setHorizontalGroup(
             jPanelAgregarPintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelAgregarPintLayout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(jLabelAgregarPint)
+                .addContainerGap(106, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAgregarPintLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanelAgregarPintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAgregarPintLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabelAgregarAcabadoPint)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldAgregarAcabadoPint, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26))
                     .addGroup(jPanelAgregarPintLayout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addGroup(jPanelAgregarPintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(BtnAñadirPint)
-                            .addComponent(jLabelAgregarPint)))
+                        .addComponent(jLabelAgregarPrecioPint)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldAgregarPrecioPint, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelAgregarPintLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addGroup(jPanelAgregarPintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAgregarPintLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabelAgregarAcabadoPint)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextFieldAgregarAcabadoPint, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26))
-                            .addGroup(jPanelAgregarPintLayout.createSequentialGroup()
-                                .addGroup(jPanelAgregarPintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanelAgregarPintLayout.createSequentialGroup()
-                                        .addComponent(jLabelAgregarPrecioPint)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextFieldAgregarPrecioPint, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanelAgregarPintLayout.createSequentialGroup()
-                                        .addComponent(jLabelAgregarUniMedPint)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextFieldAgregarUniMedPint, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanelAgregarPintLayout.createSequentialGroup()
-                                        .addComponent(jLabelAgregarCantUniPint)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextFieldAgregarCantUniPint, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanelAgregarPintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarPintLayout.createSequentialGroup()
-                                            .addComponent(jLabelAgregarTipoPint)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jTextFieldAgregarTipoPint))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarPintLayout.createSequentialGroup()
-                                            .addComponent(jLabelAgregarIDPint)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jTextFieldAgregarIDPint, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarPintLayout.createSequentialGroup()
-                                            .addComponent(jLabelAgregarNomPint)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(jTextFieldAgregarNomPint, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarPintLayout.createSequentialGroup()
-                                            .addComponent(jLabelAgregarCantidadPint)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(jTextFieldAgregarCantPint)
-                                            .addGap(15, 15, 15))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarPintLayout.createSequentialGroup()
-                                            .addComponent(jLabelAgregarPresentacionPint)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jTextFieldAgregarPresenPint))))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addGap(27, 27, 27))
+                        .addComponent(jLabelAgregarUniMedPint)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldAgregarUniMedPint, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelAgregarPintLayout.createSequentialGroup()
+                        .addComponent(jLabelAgregarCantUniPint)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldAgregarCantUniPint, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelAgregarPintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarPintLayout.createSequentialGroup()
+                            .addComponent(jLabelAgregarTipoPint)
+                            .addGap(18, 18, 18)
+                            .addComponent(jTextFieldAgregarTipoPint))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarPintLayout.createSequentialGroup()
+                            .addComponent(jLabelAgregarNomPint)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jTextFieldAgregarNomPint, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarPintLayout.createSequentialGroup()
+                            .addComponent(jLabelAgregarPresentacionPint)
+                            .addGap(18, 18, 18)
+                            .addComponent(jTextFieldAgregarPresenPint, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarPintLayout.createSequentialGroup()
+                            .addComponent(jLabelAgregarCantidadPint)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(jPanelAgregarPintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(BtnAñadirPint)
+                                .addGroup(jPanelAgregarPintLayout.createSequentialGroup()
+                                    .addComponent(jTextFieldAgregarCantPint)
+                                    .addGap(15, 15, 15))))))
+                .addGap(29, 29, 29))
         );
         jPanelAgregarPintLayout.setVerticalGroup(
             jPanelAgregarPintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelAgregarPintLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelAgregarPint)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                .addGroup(jPanelAgregarPintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelAgregarIDPint)
-                    .addComponent(jTextFieldAgregarIDPint, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelAgregarPintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelAgregarNomPint)
@@ -1034,7 +1027,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabelAgregarCantidadPint))
                 .addGap(18, 18, 18)
                 .addComponent(BtnAñadirPint)
-                .addGap(15, 15, 15))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         jPanelAmePint.add(jPanelAgregarPint, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 270, -1));
@@ -1048,6 +1041,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         BtnModificarPint.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         BtnModificarPint.setText("Aceptar");
+        BtnModificarPint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnModificarPintActionPerformed(evt);
+            }
+        });
 
         jLabelModificarTipoPint.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelModificarTipoPint.setText("Tipo:");
@@ -2583,36 +2581,36 @@ public class FrmPrincipal extends javax.swing.JFrame {
             jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelPaP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanelPaP, javax.swing.GroupLayout.DEFAULT_SIZE, 813, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanelPrd, javax.swing.GroupLayout.DEFAULT_SIZE, 812, Short.MAX_VALUE))
+                .addComponent(jPanelPrd, javax.swing.GroupLayout.DEFAULT_SIZE, 825, Short.MAX_VALUE))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanelOrd, javax.swing.GroupLayout.DEFAULT_SIZE, 812, Short.MAX_VALUE))
+                .addComponent(jPanelOrd, javax.swing.GroupLayout.DEFAULT_SIZE, 825, Short.MAX_VALUE))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jPanelTabPint, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelTabPint, javax.swing.GroupLayout.DEFAULT_SIZE, 813, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                     .addGap(12, 12, 12)
-                    .addComponent(jPanelTabSella, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
+                    .addComponent(jPanelTabSella, javax.swing.GroupLayout.DEFAULT_SIZE, 801, Short.MAX_VALUE)
                     .addGap(12, 12, 12)))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                     .addGap(18, 18, 18)
-                    .addComponent(jPanelTabImper, javax.swing.GroupLayout.PREFERRED_SIZE, 776, Short.MAX_VALUE)
+                    .addComponent(jPanelTabImper, javax.swing.GroupLayout.DEFAULT_SIZE, 789, Short.MAX_VALUE)
                     .addGap(18, 18, 18)))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                     .addGap(24, 24, 24)
-                    .addComponent(jPanelTabMad, javax.swing.GroupLayout.PREFERRED_SIZE, 764, Short.MAX_VALUE)
+                    .addComponent(jPanelTabMad, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
                     .addGap(24, 24, 24)))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                     .addGap(6, 6, 6)
-                    .addComponent(jPanelTabAcceso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelTabAcceso, javax.swing.GroupLayout.DEFAULT_SIZE, 813, Short.MAX_VALUE)
                     .addGap(6, 6, 6)))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelPrincipalLayout.createSequentialGroup()
@@ -2636,41 +2634,41 @@ public class FrmPrincipal extends javax.swing.JFrame {
                     .addContainerGap()))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelPrincipalLayout.createSequentialGroup()
-                    .addContainerGap()
+                    .addGap(407, 407, 407)
                     .addComponent(jPanelAmeAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addContainerGap(408, Short.MAX_VALUE)))
         );
         jPanelPrincipalLayout.setVerticalGroup(
             jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelPaP, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
+            .addComponent(jPanelPaP, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanelPrd, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE))
+                .addComponent(jPanelPrd, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanelOrd, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE))
+                .addComponent(jPanelOrd, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jPanelTabPint, javax.swing.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+                    .addComponent(jPanelTabPint, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                     .addGap(12, 12, 12)
-                    .addComponent(jPanelTabSella, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
+                    .addComponent(jPanelTabSella, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
                     .addGap(12, 12, 12)))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                     .addGap(18, 18, 18)
-                    .addComponent(jPanelTabImper, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE)
+                    .addComponent(jPanelTabImper, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE)
                     .addGap(18, 18, 18)))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                     .addGap(24, 24, 24)
-                    .addComponent(jPanelTabMad, javax.swing.GroupLayout.PREFERRED_SIZE, 473, Short.MAX_VALUE)
+                    .addComponent(jPanelTabMad, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
                     .addGap(24, 24, 24)))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                     .addGap(6, 6, 6)
-                    .addComponent(jPanelTabAcceso, javax.swing.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+                    .addComponent(jPanelTabAcceso, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
                     .addGap(6, 6, 6)))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelPrincipalLayout.createSequentialGroup()
@@ -2694,9 +2692,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
                     .addContainerGap()))
             .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelPrincipalLayout.createSequentialGroup()
-                    .addGap(5, 5, 5)
+                    .addGap(266, 266, 266)
                     .addComponent(jPanelAmeAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(16, Short.MAX_VALUE)))
+                    .addContainerGap(266, Short.MAX_VALUE)))
         );
 
         MbMenu.setText("Menu");
@@ -2746,11 +2744,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 812, Short.MAX_VALUE)
+            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 825, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
+            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
         );
 
         pack();
@@ -2837,8 +2835,19 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnAtrasAccesoActionPerformed
 
     private void BtnAtrasTabPintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtrasTabPintActionPerformed
-        // TODO add your handling code here:
+       // TODO add your handling code here:
         changePanel(jPanelTabPint);
+        PanelABCPint tablaVer2 = new PanelABCPint(
+        jTextFieldAgregarNomPint,
+        jTextFieldAgregarTipoPint,
+        jTextFieldAgregarAcabadoPint,
+        jTextFieldAgregarPresenPint,
+        jTextFieldAgregarCantUniPint,
+        jTextFieldAgregarUniMedPint,
+        jTextFieldAgregarPrecioPint,
+        jTextFieldAgregarCantPint,
+        JTablePinturas 
+    );  
     }//GEN-LAST:event_BtnAtrasTabPintActionPerformed
 
     private void BtnMnPrdPintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMnPrdPintActionPerformed
@@ -2902,13 +2911,86 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnModifiAccesoActionPerformed
 
     private void BtnEliminarPintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarPintActionPerformed
-        // TODO add your handling code here:
+    PanelABCPint panel = new PanelABCPint(
+        jTextFieldAgregarNomPint,
+        jTextFieldAgregarTipoPint,
+        jTextFieldAgregarAcabadoPint,
+        jTextFieldAgregarPresenPint,
+        jTextFieldAgregarCantUniPint,
+        jTextFieldAgregarUniMedPint,
+        jTextFieldAgregarPrecioPint,
+        jTextFieldAgregarCantPint,
+        JTablePinturas 
+    );
+    
+    // Intentar obtener el ID y eliminar
+    try {
+        int id = Integer.parseInt(jTextFieldEliminarIDPint.getText().trim());
+        if (panel.Baja(id)) {
+            jTextFieldEliminarIDPint.setText(""); // Limpiar después de eliminar
+        }
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Por favor ingrese un ID válido", "Error", JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_BtnEliminarPintActionPerformed
+
+    private void BtnAñadirPintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAñadirPintActionPerformed
+        PanelABCPint panel = new PanelABCPint(
+        jTextFieldAgregarNomPint,
+        jTextFieldAgregarTipoPint,
+        jTextFieldAgregarAcabadoPint,
+        jTextFieldAgregarPresenPint,
+        jTextFieldAgregarCantUniPint,
+        jTextFieldAgregarUniMedPint,
+        jTextFieldAgregarPrecioPint,
+        jTextFieldAgregarCantPint,
+        JTablePinturas 
+    );
+        panel.Alta();        
+    }//GEN-LAST:event_BtnAñadirPintActionPerformed
+
+    private void JTablePinturasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTablePinturasMouseEntered
+        // TODO add your handling code here:
+        PanelABCPint tablaVer = new PanelABCPint(
+        jTextFieldAgregarNomPint,
+        jTextFieldAgregarTipoPint,
+        jTextFieldAgregarAcabadoPint,
+        jTextFieldAgregarPresenPint,
+        jTextFieldAgregarCantUniPint,
+        jTextFieldAgregarUniMedPint,
+        jTextFieldAgregarPrecioPint,
+        jTextFieldAgregarCantPint,
+        JTablePinturas 
+    );  
+    }//GEN-LAST:event_JTablePinturasMouseEntered
+
+    private void BtnModificarPintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarPintActionPerformed
+    PanelABCPint panel = new PanelABCPint(
+        jTextFieldModificarNomPint,      // ← Fíjate: dice "Modificar"
+        jTextFieldModificarTipoPint,
+        jTextFieldModificarAcabadoPint,
+        jTextFieldModificarPresenPint,
+        jTextFieldModificarCantUniPint,
+        jTextFieldModificarUniMedPint,
+        jTextFieldModificarPrecioPint,
+        jTextFieldModificarCantPint,
+        JTablePinturas 
+    );
+    
+    try {
+        int id = Integer.parseInt(jTextFieldModificarIDPint.getText().trim());
+        if (panel.Cambio(id)) {
+            // Éxito - los campos se limpian automáticamente
+        }
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Por favor ingrese un ID válido", "Error", JOptionPane.ERROR_MESSAGE);
+    }    }//GEN-LAST:event_BtnModificarPintActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+            
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -2939,37 +3021,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
         });
     }
+//AQUI EMPIEZAN NUESTROS MÉTODOS
 
-//AQUI EMPIEZAN NUESTROS MÉTODOS    
-    public void cargarDatosTBLPinturas() {
-        try {
-            Connection con = (Connection) Conexion.getConexion();
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM pinturas_y_recubrimientos");
-
-            DefaultTableModel modelo = (DefaultTableModel) JTablePinturas.getModel();
-
-            modelo.setRowCount(0); // limpia la tabla
-
-            while (rs.next()) {
-                Object[] columna = new Object[9];
-
-                columna[0] = rs.getInt("ID_Pintura");
-                columna[1] = rs.getString("Nombre");
-                columna[2] = rs.getString("Tipo_pintura");
-                columna[3] = rs.getString("Acabado");
-                columna[4] = rs.getString("Presentacion");
-                columna[5] = rs.getString("Cantidad_Por_Unidad");
-                columna[6] = rs.getString("Unidad_Medida");
-                columna[7] = rs.getDouble("Precio");
-                columna[8] = rs.getInt("Cantidad");
-
-                modelo.addRow(columna);
-            }
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-       }
-     }
     
     
 //AQUI TERMINAN NUESTROS MÉTODOS    
@@ -3048,7 +3101,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelAgregarIDAcceso;
     private javax.swing.JLabel jLabelAgregarIDImper;
     private javax.swing.JLabel jLabelAgregarIDMad;
-    private javax.swing.JLabel jLabelAgregarIDPint;
     private javax.swing.JLabel jLabelAgregarIDSella;
     private javax.swing.JLabel jLabelAgregarImper;
     private javax.swing.JLabel jLabelAgregarMad;
@@ -3193,7 +3245,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldAgregarIDAcceso;
     private javax.swing.JTextField jTextFieldAgregarIDImper;
     private javax.swing.JTextField jTextFieldAgregarIDMad;
-    private javax.swing.JTextField jTextFieldAgregarIDPint;
     private javax.swing.JTextField jTextFieldAgregarIDSella;
     private javax.swing.JTextField jTextFieldAgregarNomAcceso;
     private javax.swing.JTextField jTextFieldAgregarNomImper;
@@ -3267,4 +3318,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldModificarUniMedPint;
     private javax.swing.JTextField jTextFieldModificarUniMedSella;
     // End of variables declaration//GEN-END:variables
+
+
 }

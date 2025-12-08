@@ -1,23 +1,12 @@
 package Clases_Simples;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 import Clases_Abstractas.PanelABC;
-import Interfaces.cargarDatos;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-
-/**
- *
- * @author HP_25
- */
 
 public class PanelABCPint extends PanelABC {
     private JTextField txtNombre;
@@ -30,10 +19,10 @@ public class PanelABCPint extends PanelABC {
     private JTextField txtCantidad;
     private JTable tablaPinturas;
     
-        public PanelABCPint(JTextField txtNombre, JTextField txtTipo,
-                        JTextField txtAcabado, JTextField txtPresentacion,
-                        JTextField txtCantidadUnidad, JTextField txtUnidadMedida,
-                        JTextField txtPrecio, JTextField txtCantidad, JTable tabla) {
+    public PanelABCPint(JTextField txtNombre, JTextField txtTipo,
+                    JTextField txtAcabado, JTextField txtPresentacion,
+                    JTextField txtCantidadUnidad, JTextField txtUnidadMedida,
+                    JTextField txtPrecio, JTextField txtCantidad, JTable tabla) {
         super();
         this.txtNombre = txtNombre;
         this.txtTipoPintura = txtTipo;
@@ -44,9 +33,8 @@ public class PanelABCPint extends PanelABC {
         this.txtPrecio = txtPrecio;
         this.txtCantidad = txtCantidad;
         this.tablaPinturas = tabla;
-        cargarDatos();
+        cargarDatosIniciales();
     }
-        
 
     @Override
     protected String getNombreTabla() {
@@ -107,28 +95,35 @@ public class PanelABCPint extends PanelABC {
 
     @Override
     protected Object[] getValoresDeCampos() {
-        // Obtener valores en el MISMO ORDEN que getNombresColumnas()
         return new Object[] {
-            txtNombre.getText().trim(),                    // String
-            txtTipoPintura.getText().trim(),               // String  
-            txtAcabado.getText().trim(),                   // String
-            txtPresentacion.getText().trim(),              // String
-            Integer.parseInt(txtCantidadUnidad.getText()), // int
-            txtUnidadMedida.getText().trim(),              // String
-            Integer.parseInt(txtPrecio.getText()),       // double
-            Integer.parseInt(txtCantidad.getText())        // int
+            txtNombre.getText().trim(),
+            txtTipoPintura.getText().trim(),
+            txtAcabado.getText().trim(),
+            txtPresentacion.getText().trim(),
+            Integer.parseInt(txtCantidadUnidad.getText()),
+            txtUnidadMedida.getText().trim(),
+            Integer.parseInt(txtPrecio.getText()),
+            Integer.parseInt(txtCantidad.getText())
         };
     } 
+    
     @Override  
     public void cargarDatos() {
-        try {
-            Connection con = (Connection) Conexion.getConexion();
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM pinturas_y_recubrimientos");
+        Connection con = null;  
+        Statement st = null;
+        ResultSet rs = null;
+        
+        try {            
+            con = Conexion.getConexion();  
+            st = con.createStatement();
+            rs = st.executeQuery("SELECT * FROM pinturas_y_recubrimientos");
 
             DefaultTableModel modelo = (DefaultTableModel) tablaPinturas.getModel(); 
             
+            // Limpiar tabla
             modelo.setRowCount(0);
+            
+            int filas = 0;
             while (rs.next()) {
                 Object[] columna = new Object[9];
 
@@ -137,16 +132,26 @@ public class PanelABCPint extends PanelABC {
                 columna[2] = rs.getString("Tipo_pintura");
                 columna[3] = rs.getString("Acabado");
                 columna[4] = rs.getString("Presentacion");
-                columna[5] = rs.getString("Cantidad_Por_Unidad");
+                columna[5] = rs.getInt("Cantidad_Por_Unidad");  
                 columna[6] = rs.getString("Unidad_Medida");
-                columna[7] = rs.getDouble("Precio");
+                columna[7] = rs.getInt("Precio");  
                 columna[8] = rs.getInt("Cantidad");
 
                 modelo.addRow(columna);
-            }
+                filas++;
+            }            
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-       }
+            System.out.println("Error al cargar pinturas: " + e.getMessage());
+            e.printStackTrace();
+            mostrarError("Error al cargar datos: " + e.getMessage());
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (st != null) st.close();
+                if (con != null) con.close();
+            } catch (Exception e) {
+                System.out.println("Error al cerrar conexión: " + e.getMessage());
+            }
+        }
     }
 }
-    

@@ -19,8 +19,7 @@ import javax.swing.table.DefaultTableModel;
  * @author HP_25
  */
 
-
-public class PanelABCPint extends PanelABC implements cargarDatos{
+public class PanelABCPint extends PanelABC {
     private JTextField txtNombre;
     private JTextField txtTipoPintura;
     private JTextField txtAcabado;
@@ -45,39 +44,10 @@ public class PanelABCPint extends PanelABC implements cargarDatos{
         this.txtPrecio = txtPrecio;
         this.txtCantidad = txtCantidad;
         this.tablaPinturas = tabla;
-        configurarModeloTabla();
         cargarDatos();
     }
         
-    private void configurarModeloTabla() {
-        if (tablaPinturas.getModel() == null || 
-            tablaPinturas.getModel().getColumnCount() == 0) {
-            
-            DefaultTableModel modelo = new DefaultTableModel() {
-            @Override
-            public boolean isCellEditable(int row, int column) {
-                return false; // Tabla de solo lectura
-            }
-            };
-            
-            String[] nombresColumnas = {
-                "ID_Pintura",    
-                "Nombre",        
-                "Tipo_pintura",  
-                "Acabado",       
-                "Presentacion",  
-                "Cantidad_Por_Unidad", 
-                "Unidad_Medida", 
-                "Precio",       
-                "Cantidad"       
-            };
-            
-            for (String nombreColumna : nombresColumnas) {
-                modelo.addColumn(nombreColumna);
-            }
-            tablaPinturas.setModel(modelo);
-        }
-    }
+
     @Override
     protected String getNombreTabla() {
         return "pinturas_y_recubrimientos"; 
@@ -102,28 +72,26 @@ public class PanelABCPint extends PanelABC implements cargarDatos{
         };
     }
 
-@Override
-protected boolean validarCampos() {
-    // Validar campos vacíos
-    if (!campoNoVacio(txtNombre, "Nombre") ||
-        !campoNoVacio(txtTipoPintura, "Tipo") ||
-        !campoNoVacio(txtAcabado, "Acabado") ||
-        !campoNoVacio(txtPresentacion, "Presentación") ||
-        !campoNoVacio(txtUnidadMedida, "Unidad de Medida")) {
-        return false;
-    }
-    
-    // Validar números
-    if (!esEnteroValido(txtCantidadUnidad, "Cantidad por Unidad") ||
-        !esEnteroValido(txtPrecio, "Precio") ||
-        !esEnteroValido(txtCantidad, "Cantidad")) {
-        return false;
-    }
-    
-    return true;
-    }
+    @Override
+    protected boolean validarCampos() {
+        // Validar campos vacíos
+        if (!campoNoVacio(txtNombre, "Nombre") ||
+            !campoNoVacio(txtTipoPintura, "Tipo") ||
+            !campoNoVacio(txtAcabado, "Acabado") ||
+            !campoNoVacio(txtPresentacion, "Presentación") ||
+            !campoNoVacio(txtUnidadMedida, "Unidad de Medida")) {
+            return false;
+        }
 
+        // Validar números
+        if (!esEnteroValido(txtCantidadUnidad, "Cantidad por Unidad") ||
+            !esEnteroValido(txtPrecio, "Precio") ||
+            !esEnteroValido(txtCantidad, "Cantidad")) {
+            return false;
+        }
 
+        return true;
+    }
 
     @Override
     protected void limpiarCampos() {

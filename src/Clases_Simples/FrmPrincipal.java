@@ -638,6 +638,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 "ID_Sellador", "Nombre", "Tipo", "Presentación", "Cantidad_Por_Unidad", "Unidad_Medida", "Precio", "Cantidad"
             }
         ));
+        jTableSella.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jTableSellaMouseEntered(evt);
+            }
+        });
         jScrollPaneSella.setViewportView(jTableSella);
 
         javax.swing.GroupLayout jPanelTabSellaLayout = new javax.swing.GroupLayout(jPanelTabSella);
@@ -2837,7 +2842,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void BtnAtrasTabPintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtrasTabPintActionPerformed
        // TODO add your handling code here:
         changePanel(jPanelTabPint);
-        PanelABCPint tablaVer2 = new PanelABCPint(
+        PanelABCPint tablaPintVer2 = new PanelABCPint(
         jTextFieldAgregarNomPint,
         jTextFieldAgregarTipoPint,
         jTextFieldAgregarAcabadoPint,
@@ -2911,7 +2916,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnModifiAccesoActionPerformed
 
     private void BtnEliminarPintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarPintActionPerformed
-    PanelABCPint panel = new PanelABCPint(
+    PanelABCPint PintBaja = new PanelABCPint(
         jTextFieldAgregarNomPint,
         jTextFieldAgregarTipoPint,
         jTextFieldAgregarAcabadoPint,
@@ -2926,16 +2931,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
     // Intentar obtener el ID y eliminar
     try {
         int id = Integer.parseInt(jTextFieldEliminarIDPint.getText().trim());
-        if (panel.Baja(id)) {
+        if (PintBaja.Baja(id)) {
             jTextFieldEliminarIDPint.setText(""); // Limpiar después de eliminar
         }
     } catch (NumberFormatException e) {
         JOptionPane.showMessageDialog(this, "Por favor ingrese un ID válido", "Error", JOptionPane.ERROR_MESSAGE);
-    }
+      }
     }//GEN-LAST:event_BtnEliminarPintActionPerformed
 
     private void BtnAñadirPintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAñadirPintActionPerformed
-        PanelABCPint panel = new PanelABCPint(
+         PanelABCPint PintAlta = new PanelABCPint(
         jTextFieldAgregarNomPint,
         jTextFieldAgregarTipoPint,
         jTextFieldAgregarAcabadoPint,
@@ -2946,12 +2951,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jTextFieldAgregarCantPint,
         JTablePinturas 
     );
-        panel.Alta();        
+        PintAlta.Alta();        
     }//GEN-LAST:event_BtnAñadirPintActionPerformed
 
     private void JTablePinturasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTablePinturasMouseEntered
         // TODO add your handling code here:
-        PanelABCPint tablaVer = new PanelABCPint(
+        PanelABCPint PintVer = new PanelABCPint(
         jTextFieldAgregarNomPint,
         jTextFieldAgregarTipoPint,
         jTextFieldAgregarAcabadoPint,
@@ -2965,8 +2970,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_JTablePinturasMouseEntered
 
     private void BtnModificarPintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarPintActionPerformed
-    PanelABCPint panel = new PanelABCPint(
-        jTextFieldModificarNomPint,      // ← Fíjate: dice "Modificar"
+    PanelABCPint PintCambio = new PanelABCPint(
+        jTextFieldModificarNomPint,      // ← "Modificar"
         jTextFieldModificarTipoPint,
         jTextFieldModificarAcabadoPint,
         jTextFieldModificarPresenPint,
@@ -2979,12 +2984,25 @@ public class FrmPrincipal extends javax.swing.JFrame {
     
     try {
         int id = Integer.parseInt(jTextFieldModificarIDPint.getText().trim());
-        if (panel.Cambio(id)) {
+        if (PintCambio.Cambio(id)) {
             // Éxito - los campos se limpian automáticamente
         }
     } catch (NumberFormatException e) {
         JOptionPane.showMessageDialog(this, "Por favor ingrese un ID válido", "Error", JOptionPane.ERROR_MESSAGE);
     }    }//GEN-LAST:event_BtnModificarPintActionPerformed
+
+    private void jTableSellaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableSellaMouseEntered
+        PanelABCSella TablaSellaVer = new PanelABCSella(
+        jTextFieldAgregarNomSella,
+        jTextFieldAgregarTipoSella,
+        jTextFieldAgregarPresenSella,
+        jTextFieldAgregarCantUniSella,
+        jTextFieldAgregarUniMedSella,
+        jTextFieldAgregarPrecioSella,
+        jTextFieldAgregarCantSella,
+        jTableSella
+    );
+    }//GEN-LAST:event_jTableSellaMouseEntered
 
     /**
      * @param args the command line arguments

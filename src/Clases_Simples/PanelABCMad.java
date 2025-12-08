@@ -1,5 +1,10 @@
 package Clases_Simples;
 
+/**
+ *
+ * @author HP_25
+ */
+
 import Clases_Abstractas.PanelABC;
 import Interfaces.cargarDatos;
 import java.sql.Connection;
@@ -9,47 +14,47 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-public class PanelABCSella extends PanelABC implements cargarDatos {
+public class PanelABCMad extends PanelABC implements cargarDatos {
     private JTextField txtNombre;
-    private JTextField txtTipo;
+    private JTextField txtTipoMadera;
     private JTextField txtPresentacion;
     private JTextField txtCantidadUnidad;
     private JTextField txtUnidadMedida;
     private JTextField txtPrecio;
     private JTextField txtCantidad;
-    private JTable tablaSelladores;
+    private JTable tablaMaderas;
 
-    public PanelABCSella(JTextField txtNombre, JTextField txtTipo,
-                    JTextField txtPresentacion, JTextField txtCantidadUnidad,
-                    JTextField txtUnidadMedida, JTextField txtPrecio,
-                    JTextField txtCantidad, JTable tabla) {
+    public PanelABCMad(JTextField txtNombre, JTextField txtTipo,
+                          JTextField txtPresentacion, JTextField txtCantidadUnidad,
+                          JTextField txtUnidadMedida, JTextField txtPrecio,
+                          JTextField txtCantidad, JTable tabla) {
         super();
         this.txtNombre = txtNombre;
-        this.txtTipo = txtTipo;
+        this.txtTipoMadera = txtTipo;
         this.txtPresentacion = txtPresentacion;
         this.txtCantidadUnidad = txtCantidadUnidad;
         this.txtUnidadMedida = txtUnidadMedida;
         this.txtPrecio = txtPrecio;
         this.txtCantidad = txtCantidad;
-        this.tablaSelladores = tabla;
+        this.tablaMaderas = tabla;
         cargarDatosIniciales();
     }
 
     @Override
     protected String getNombreTabla() {
-        return "selladores";
+        return "maderas";
     }   
 
     @Override
     protected String getNombreCampoID() {
-        return "ID_Sellador";
+        return "ID_Madera";
     }
 
     @Override
     protected String[] getNombresColumnas() {
         return new String[]{
             "Nombre",
-            "Tipo",
+            "Tipo_Madera",
             "Presentacion",
             "Cantidad_Por_Unidad",
             "Unidad_Medida",
@@ -61,7 +66,7 @@ public class PanelABCSella extends PanelABC implements cargarDatos {
     @Override
     protected boolean validarCampos() {
         if (!campoNoVacio(txtNombre, "Nombre") ||
-            !campoNoVacio(txtTipo, "Tipo_Sellador") ||
+            !campoNoVacio(txtTipoMadera, "Tipo de Madera") ||
             !campoNoVacio(txtPresentacion, "Presentación") ||
             !campoNoVacio(txtUnidadMedida, "Unidad de Medida")) {
             return false;
@@ -78,7 +83,7 @@ public class PanelABCSella extends PanelABC implements cargarDatos {
     @Override
     protected void limpiarCampos() {
         txtNombre.setText("");
-        txtTipo.setText("");
+        txtTipoMadera.setText("");
         txtPresentacion.setText("");
         txtCantidadUnidad.setText("");
         txtUnidadMedida.setText("");
@@ -90,7 +95,7 @@ public class PanelABCSella extends PanelABC implements cargarDatos {
     protected Object[] getValoresDeCampos() {
         return new Object[] {
             txtNombre.getText().trim(),
-            txtTipo.getText().trim(),
+            txtTipoMadera.getText().trim(),
             txtPresentacion.getText().trim(),
             Integer.parseInt(txtCantidadUnidad.getText()),
             txtUnidadMedida.getText().trim(),
@@ -105,21 +110,22 @@ public class PanelABCSella extends PanelABC implements cargarDatos {
         Statement st = null;
         ResultSet rs = null;
         
-        try {
+        try {            
             con = Conexion.getConexion();
             st = con.createStatement();
-            rs = st.executeQuery("SELECT * FROM selladores");
+            rs = st.executeQuery("SELECT * FROM maderas");
 
-            DefaultTableModel modelo = (DefaultTableModel) tablaSelladores.getModel();
+            DefaultTableModel modelo = (DefaultTableModel) tablaMaderas.getModel();
             
             modelo.setRowCount(0);
             
+            int filas = 0;
             while (rs.next()) {
                 Object[] columna = new Object[8];
 
-                columna[0] = rs.getInt("ID_Sellador");
+                columna[0] = rs.getInt("ID_Madera");
                 columna[1] = rs.getString("Nombre");
-                columna[2] = rs.getString("Tipo_Sellador");
+                columna[2] = rs.getString("Tipo_Madera");
                 columna[3] = rs.getString("Presentacion");
                 columna[4] = rs.getInt("Cantidad_Por_Unidad");
                 columna[5] = rs.getString("Unidad_Medida");
@@ -127,9 +133,10 @@ public class PanelABCSella extends PanelABC implements cargarDatos {
                 columna[7] = rs.getInt("Cantidad");
 
                 modelo.addRow(columna);
+                filas++;
             }            
         } catch (Exception e) {
-            System.out.println("Error al cargar sella: " + e.getMessage());
+            System.out.println("Error al cargar maderas: " + e.getMessage());
             e.printStackTrace();
             mostrarError("Error al cargar datos: " + e.getMessage());
         } finally {

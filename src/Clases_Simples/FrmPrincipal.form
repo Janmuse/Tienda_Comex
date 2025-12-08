@@ -282,7 +282,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabelPapFondo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -290,7 +290,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabelPapFondo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="42" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -590,7 +590,7 @@
                       <Component id="jScrollPanePint" min="-2" pref="276" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Component id="BtnModifiPint" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="54" max="32767" attributes="0"/>
+                      <EmptySpace pref="84" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -633,9 +633,6 @@
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="JTablePinturasMouseEntered"/>
-                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -772,7 +769,7 @@
                       <Table columnCount="8" rowCount="4">
                         <Column editable="true" title="ID_Sellador" type="java.lang.Object"/>
                         <Column editable="true" title="Nombre" type="java.lang.Object"/>
-                        <Column editable="true" title="Tipo" type="java.lang.Object"/>
+                        <Column editable="true" title="Tipo_Imper" type="java.lang.Object"/>
                         <Column editable="true" title="Presentaci&#xf3;n" type="java.lang.Object"/>
                         <Column editable="true" title="Cantidad_Por_Unidad" type="java.lang.Object"/>
                         <Column editable="true" title="Unidad_Medida" type="java.lang.Object"/>
@@ -828,9 +825,6 @@
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTableSellaMouseEntered"/>
-                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1228,7 +1222,7 @@
                       <Table columnCount="5" rowCount="4">
                         <Column editable="true" title="ID_Accesorio" type="java.lang.Object"/>
                         <Column editable="true" title="Nombre" type="java.lang.Object"/>
-                        <Column editable="true" title="TIpo" type="java.lang.Object"/>
+                        <Column editable="true" title="TIpo_Acces" type="java.lang.Object"/>
                         <Column editable="true" title="Precio" type="java.lang.Object"/>
                         <Column editable="true" title="Cantidad" type="java.lang.Object"/>
                       </Table>
@@ -2003,63 +1997,55 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="BtnAñadirSella" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelAgregarSella" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="106" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="BtnAñadirSella" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabelAgregarSella" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabelAgregarTipoSella" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldAgregarTipoSella" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabelAgregarNomSella" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldAgregarNomSella" min="-2" pref="107" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabelAgregarTipoSella" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="jTextFieldAgregarTipoSella" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabelAgregarIDSella" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="jTextFieldAgregarIDSella" min="-2" pref="105" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabelAgregarNomSella" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jTextFieldAgregarNomSella" min="-2" pref="107" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabelAgregarCantidadSella" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jTextFieldAgregarCantSella" min="-2" pref="81" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabelAgregarPrecioSella" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jTextFieldAgregarPrecioSella" min="-2" pref="124" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabelAgregarPresentacionSella" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jTextFieldAgregarPresenSella" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabelAgregarUniMedSella" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jTextFieldAgregarUniMedSella" min="-2" pref="80" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabelAgregarCantUniSella" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jTextFieldAgregarCantUniSella" min="-2" pref="80" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <Component id="jLabelAgregarCantidadSella" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAgregarCantSella" min="-2" pref="81" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabelAgregarPrecioSella" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAgregarPrecioSella" min="-2" pref="124" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabelAgregarPresentacionSella" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAgregarPresenSella" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabelAgregarUniMedSella" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAgregarUniMedSella" min="-2" pref="80" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabelAgregarCantUniSella" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAgregarCantUniSella" min="-2" pref="80" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2068,11 +2054,6 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabelAgregarSella" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabelAgregarIDSella" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextFieldAgregarIDSella" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabelAgregarNomSella" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -2108,7 +2089,7 @@
                               <Component id="jTextFieldAgregarCantSella" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelAgregarCantidadSella" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="104" max="32767" attributes="0"/>
+                          <EmptySpace pref="130" max="32767" attributes="0"/>
                           <Component id="BtnAñadirSella" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       </Group>
@@ -2131,6 +2112,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Aceptar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnA&#xf1;adirSellaActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextFieldAgregarNomSella">
                 </Component>
@@ -2186,14 +2170,6 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextFieldAgregarCantSella">
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabelAgregarIDSella">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="ID:"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabelAgregarCantidadSella">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -2209,8 +2185,6 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Nombre:"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextFieldAgregarIDSella">
                 </Component>
               </SubComponents>
             </Container>
@@ -2363,6 +2337,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Aceptar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnModificarSellaActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextFieldModificarTipoSella">
                 </Component>
@@ -2527,6 +2504,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Aceptar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnEliminarSellaActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabelEliminarIDSella">
                   <Properties>
@@ -2630,7 +2610,7 @@
                               <Component id="BtnAñadirImper" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelAgregarImper" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="105" max="32767" attributes="0"/>
+                          <EmptySpace pref="106" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -2640,11 +2620,6 @@
                                       <Component id="jLabelAgregarTipoImper" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jTextFieldAgregarTipoImper" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabelAgregarIDImper" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jTextFieldAgregarIDImper" min="-2" pref="105" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabelAgregarNomImper" min="-2" max="-2" attributes="0"/>
@@ -2665,7 +2640,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabelAgregarPresentacionImper" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldAgregarPresenImper" max="32767" attributes="0"/>
+                                  <Component id="jTextFieldAgregarPresenImper" pref="128" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabelAgregarUniMedImper" min="-2" max="-2" attributes="0"/>
@@ -2687,11 +2662,6 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabelAgregarImper" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabelAgregarIDImper" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextFieldAgregarIDImper" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabelAgregarNomImper" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -2727,7 +2697,7 @@
                               <Component id="jTextFieldAgregarCantImper" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelAgregarCantidadImper" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="92" max="32767" attributes="0"/>
+                          <EmptySpace pref="130" max="32767" attributes="0"/>
                           <Component id="BtnAñadirImper" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       </Group>
@@ -2750,14 +2720,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Aceptar"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabelAgregarIDImper">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="ID:"/>
-                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnA&#xf1;adirImperActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabelAgregarCantidadImper">
                   <Properties>
@@ -2784,8 +2749,6 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Presentaci&#xf3;n:"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextFieldAgregarIDImper">
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextFieldAgregarCantUniImper">
                 </Component>
@@ -2985,6 +2948,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Aceptar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnModificarImperActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabelModificarNomImper">
                   <Properties>
@@ -3149,6 +3115,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Aceptar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnEliminarImperActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabelEliminarIDImper">
                   <Properties>
@@ -3247,26 +3216,24 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="BtnAñadirMad" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelAgregarMad" alignment="1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="106" max="32767" attributes="0"/>
+                          <Component id="jLabelAgregarPresentacionMad" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jTextFieldAgregarPresenMad" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="BtnAñadirMad" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabelAgregarMad" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabelAgregarTipoMad" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jTextFieldAgregarTipoMad" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabelAgregarIDMad" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jTextFieldAgregarIDMad" min="-2" pref="105" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabelAgregarNomMad" min="-2" max="-2" attributes="0"/>
@@ -3285,11 +3252,6 @@
                                   <Component id="jTextFieldAgregarPrecioMad" min="-2" pref="124" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabelAgregarPresentacionMad" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldAgregarPresenMad" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabelAgregarUniMedMad" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jTextFieldAgregarUniMedMad" min="-2" pref="80" max="-2" attributes="0"/>
@@ -3300,7 +3262,7 @@
                                   <Component id="jTextFieldAgregarCantUniMad" min="-2" pref="80" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace pref="54" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3309,11 +3271,6 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabelAgregarMad" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabelAgregarIDMad" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextFieldAgregarIDMad" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabelAgregarNomMad" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -3349,7 +3306,7 @@
                               <Component id="jTextFieldAgregarCantMad" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelAgregarCantidadMad" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="104" max="32767" attributes="0"/>
+                          <EmptySpace pref="130" max="32767" attributes="0"/>
                           <Component id="BtnAñadirMad" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       </Group>
@@ -3372,14 +3329,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Aceptar"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabelAgregarIDMad">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="ID:"/>
-                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnA&#xf1;adirMadActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabelAgregarCantidadMad">
                   <Properties>
@@ -3406,8 +3358,6 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Presentaci&#xf3;n:"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextFieldAgregarIDMad">
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextFieldAgregarCantUniMad">
                 </Component>
@@ -3533,6 +3483,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Aceptar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnEliminarMadActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabelEliminarIDMad">
                   <Properties>
@@ -3740,6 +3693,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Aceptar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnModificarMadActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabelModificarCantidadMad">
                   <Properties>
@@ -3875,23 +3831,13 @@
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabelAgregarPresentacionAcceso" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jTextFieldAgregarPresenAcceso" min="-2" pref="123" max="-2" attributes="0"/>
-                                      </Group>
                                       <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jLabelAgregarTipoAcceso" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Component id="jTextFieldAgregarTipoAcceso" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabelAgregarIDAcceso" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="jTextFieldAgregarIDAcceso" min="-2" pref="105" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jLabelAgregarNomAcceso" min="-2" max="-2" attributes="0"/>
@@ -3909,20 +3855,10 @@
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="jTextFieldAgregarPrecioAcceso" min="-2" pref="124" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabelAgregarUniMedAcceso" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jTextFieldAgregarUniMedAcceso" min="-2" pref="80" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabelAgregarCantUniAcceso" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jTextFieldAgregarCantUniAcceso" min="-2" pref="80" max="-2" attributes="0"/>
-                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="19" max="32767" attributes="0"/>
+                          <EmptySpace pref="43" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3931,11 +3867,6 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabelAgregarAcceso" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabelAgregarIDAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextFieldAgregarIDAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabelAgregarNomAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -3948,21 +3879,6 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabelAgregarPresentacionAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextFieldAgregarPresenAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabelAgregarCantUniAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextFieldAgregarCantUniAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabelAgregarUniMedAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextFieldAgregarUniMedAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabelAgregarPrecioAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextFieldAgregarPrecioAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -3971,7 +3887,7 @@
                               <Component id="jTextFieldAgregarCantAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelAgregarCantidadAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="104" max="32767" attributes="0"/>
+                          <EmptySpace pref="250" max="32767" attributes="0"/>
                           <Component id="BtnAñadirAcceso" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       </Group>
@@ -3994,6 +3910,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Aceptar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnA&#xf1;adirAccesoActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabelAgregarTipoAcceso">
                   <Properties>
@@ -4002,8 +3921,6 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Tipo:"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextFieldAgregarPresenAcceso">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabelAgregarPrecioAcceso">
                   <Properties>
@@ -4023,47 +3940,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextFieldAgregarTipoAcceso">
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabelAgregarPresentacionAcceso">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Presentaci&#xf3;n:"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JTextField" name="jTextFieldAgregarCantAcceso">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextFieldAgregarIDAcceso">
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextFieldAgregarCantUniAcceso">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabelAgregarCantUniAcceso">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Cantidad unidad:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextFieldAgregarUniMedAcceso">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabelAgregarUniMedAcceso">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Unidad de medida:"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JTextField" name="jTextFieldAgregarNomAcceso">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabelAgregarIDAcceso">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="ID:"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextFieldAgregarPrecioAcceso">
                 </Component>
@@ -4127,26 +4006,9 @@
                                   <Component id="jTextFieldModificarNomAcceso" min="-2" pref="110" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabelModificarPresentacionAcceso" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldModificarPresenAcceso" min="-2" pref="76" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabelModificarCantidadAcceso" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jTextFieldModificarCantAcceso" min="-2" pref="75" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabelModificarUniMedAcceso" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextFieldModificarUniMedAcceso" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabelModificarCantUniAcceso" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextFieldModificarCantUniAcceso" min="-2" pref="93" max="-2" attributes="0"/>
-                                  </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabelModificarPrecioAcceso" min="-2" max="-2" attributes="0"/>
@@ -4154,7 +4016,7 @@
                                   <Component id="jTextFieldModificarPrecioAcceso" min="-2" pref="125" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="46" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -4180,21 +4042,6 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabelModificarPresentacionAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextFieldModificarPresenAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabelModificarCantUniAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextFieldModificarCantUniAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabelModificarUniMedAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextFieldModificarUniMedAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabelModificarPrecioAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextFieldModificarPrecioAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -4203,7 +4050,7 @@
                               <Component id="jTextFieldModificarCantAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelModificarCantidadAcceso" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="101" max="32767" attributes="0"/>
+                          <EmptySpace pref="213" max="32767" attributes="0"/>
                           <Component id="BtnModificarAcceso" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       </Group>
@@ -4226,6 +4073,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Aceptar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnModificarAccesoActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabelModificarTipoAcceso">
                   <Properties>
@@ -4253,30 +4103,12 @@
                     <Property name="text" type="java.lang.String" value="Nombre:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextFieldModificarPresenAcceso">
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabelModificarCantidadAcceso">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Cantidad:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabelModificarCantUniAcceso">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Cantidad unidad:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabelModificarUniMedAcceso">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Unidad de medida:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabelModificarIDAcceso">
@@ -4287,8 +4119,6 @@
                     <Property name="text" type="java.lang.String" value="ID:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextFieldModificarCantUniAcceso">
-                </Component>
                 <Component class="javax.swing.JTextField" name="jTextFieldModificarIDAcceso">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="                    "/>
@@ -4296,17 +4126,7 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextFieldModificarNomAcceso">
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabelModificarPresentacionAcceso">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Presentaci&#xf3;n:"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JTextField" name="jTextFieldModificarPrecioAcceso">
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextFieldModificarUniMedAcceso">
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextFieldModificarTipoAcceso">
                 </Component>
@@ -4390,6 +4210,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Aceptar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnEliminarAccesoActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabelEliminarIDAcceso">
                   <Properties>

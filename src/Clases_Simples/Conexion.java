@@ -3,8 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 
+
 package Clases_Simples;
 
+/**
+ *
+ * @author HP_25
+ */
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

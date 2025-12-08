@@ -1,54 +1,45 @@
+package Clases_Simples;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Clases_Simples;
 
 import javax.swing.JPanel;
-import java.sql.*;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Blayder510
  */
 public class FrmPrincipal extends javax.swing.JFrame {
-
+    private PanelABCPint panelPinturas;
+    private PanelABCSella panelSelladores;
+    private PanelABCImper panelImpermeabilizantes;
+    private PanelABCMad panelMaderas;
+    private PanelABCAcceso panelAccesorios;
     /**
      * Creates new form FrmPrincipal
      */
-    public FrmPrincipal() {
+   public FrmPrincipal() {
         initComponents();
- 
+        inicializarPaneles();
+
 
     }
     
-    private void changePanel(JPanel jPanel){
+   private void changePanel(JPanel jPanel){
         jPanelPrincipal.removeAll();
         jPanelPrincipal.setLayout(new java.awt.BorderLayout());
         jPanelPrincipal.add(jPanel, java.awt.BorderLayout.CENTER);
         jPanelPrincipal.revalidate();
         jPanelPrincipal.repaint();
-    
         activarPanel(jPanel);
     }
     
     private void activarPanel(javax.swing.JPanel jPanel) {
         jPanelPaP.setEnabled(false);
         jPanelPaP.setVisible(false);
-    
         jPanelPrd.setEnabled(false);
         jPanelPrd.setVisible(false);
-    
-        /*jPanelConsulta.setEnabled(false);
-        jPanelConsulta.setVisible(false);
-
-        jPanelInevntario.setEnabled(false);
-        jPanelInevntario.setVisible(false);
-    
-        jPanelRegis_Inventario.setEnabled(false);
-        jPanelRegis_Inventario.setVisible(false);*/
-    
         jPanel.setVisible(true);
         jPanel.setEnabled(true);
     }
@@ -173,10 +164,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jTextFieldAgregarPrecioSella = new javax.swing.JTextField();
         jLabelAgregarPrecioSella = new javax.swing.JLabel();
         jTextFieldAgregarCantSella = new javax.swing.JTextField();
-        jLabelAgregarIDSella = new javax.swing.JLabel();
         jLabelAgregarCantidadSella = new javax.swing.JLabel();
         jLabelAgregarNomSella = new javax.swing.JLabel();
-        jTextFieldAgregarIDSella = new javax.swing.JTextField();
         jPanelModificarSella = new javax.swing.JPanel();
         jLabelModificarSella = new javax.swing.JLabel();
         BtnModificarSella = new javax.swing.JButton();
@@ -208,12 +197,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jPanelAgregarImper = new javax.swing.JPanel();
         jLabelAgregarImper = new javax.swing.JLabel();
         BtnAñadirImper = new javax.swing.JButton();
-        jLabelAgregarIDImper = new javax.swing.JLabel();
         jLabelAgregarCantidadImper = new javax.swing.JLabel();
         jTextFieldAgregarPresenImper = new javax.swing.JTextField();
         jLabelAgregarNomImper = new javax.swing.JLabel();
         jLabelAgregarPresentacionImper = new javax.swing.JLabel();
-        jTextFieldAgregarIDImper = new javax.swing.JTextField();
         jTextFieldAgregarCantUniImper = new javax.swing.JTextField();
         jLabelAgregarCantUniImper = new javax.swing.JLabel();
         jTextFieldAgregarUniMedImper = new javax.swing.JTextField();
@@ -255,12 +242,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jPanelAgregarMad = new javax.swing.JPanel();
         jLabelAgregarMad = new javax.swing.JLabel();
         BtnAñadirMad = new javax.swing.JButton();
-        jLabelAgregarIDMad = new javax.swing.JLabel();
         jLabelAgregarCantidadMad = new javax.swing.JLabel();
         jTextFieldAgregarPresenMad = new javax.swing.JTextField();
         jLabelAgregarNomMad = new javax.swing.JLabel();
         jLabelAgregarPresentacionMad = new javax.swing.JLabel();
-        jTextFieldAgregarIDMad = new javax.swing.JTextField();
         jTextFieldAgregarCantUniMad = new javax.swing.JTextField();
         jLabelAgregarCantUniMad = new javax.swing.JLabel();
         jTextFieldAgregarUniMedMad = new javax.swing.JTextField();
@@ -303,19 +288,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabelAgregarAcceso = new javax.swing.JLabel();
         BtnAñadirAcceso = new javax.swing.JButton();
         jLabelAgregarTipoAcceso = new javax.swing.JLabel();
-        jTextFieldAgregarPresenAcceso = new javax.swing.JTextField();
         jLabelAgregarPrecioAcceso = new javax.swing.JLabel();
         jLabelAgregarNomAcceso = new javax.swing.JLabel();
         jTextFieldAgregarTipoAcceso = new javax.swing.JTextField();
-        jLabelAgregarPresentacionAcceso = new javax.swing.JLabel();
         jTextFieldAgregarCantAcceso = new javax.swing.JTextField();
-        jTextFieldAgregarIDAcceso = new javax.swing.JTextField();
-        jTextFieldAgregarCantUniAcceso = new javax.swing.JTextField();
-        jLabelAgregarCantUniAcceso = new javax.swing.JLabel();
-        jTextFieldAgregarUniMedAcceso = new javax.swing.JTextField();
-        jLabelAgregarUniMedAcceso = new javax.swing.JLabel();
         jTextFieldAgregarNomAcceso = new javax.swing.JTextField();
-        jLabelAgregarIDAcceso = new javax.swing.JLabel();
         jTextFieldAgregarPrecioAcceso = new javax.swing.JTextField();
         jLabelAgregarCantidadAcceso = new javax.swing.JLabel();
         jPanelModificarAcceso = new javax.swing.JPanel();
@@ -325,17 +302,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabelModificarPrecioAcceso = new javax.swing.JLabel();
         jTextFieldModificarCantAcceso = new javax.swing.JTextField();
         jLabelModificarNomAcceso = new javax.swing.JLabel();
-        jTextFieldModificarPresenAcceso = new javax.swing.JTextField();
         jLabelModificarCantidadAcceso = new javax.swing.JLabel();
-        jLabelModificarCantUniAcceso = new javax.swing.JLabel();
-        jLabelModificarUniMedAcceso = new javax.swing.JLabel();
         jLabelModificarIDAcceso = new javax.swing.JLabel();
-        jTextFieldModificarCantUniAcceso = new javax.swing.JTextField();
         jTextFieldModificarIDAcceso = new javax.swing.JTextField();
         jTextFieldModificarNomAcceso = new javax.swing.JTextField();
-        jLabelModificarPresentacionAcceso = new javax.swing.JLabel();
         jTextFieldModificarPrecioAcceso = new javax.swing.JTextField();
-        jTextFieldModificarUniMedAcceso = new javax.swing.JTextField();
         jTextFieldModificarTipoAcceso = new javax.swing.JTextField();
         jPanelEliminarAcceso = new javax.swing.JPanel();
         jLabelEliminarAcceso = new javax.swing.JLabel();
@@ -371,13 +342,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
             jPanelPaPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPaPLayout.createSequentialGroup()
                 .addComponent(jLabelPapFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 13, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanelPaPLayout.setVerticalGroup(
             jPanelPaPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPaPLayout.createSequentialGroup()
                 .addComponent(jLabelPapFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 42, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanelPrd.setBackground(new java.awt.Color(102, 204, 255));
@@ -549,11 +520,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 "ID_Pintura", "Nombre ", "Tipo Pintura ", "Acabado ", "Presentación ", "Cantidad Unidad ", "Unidad Medida ", "Precio ", "Cantidad "
             }
         ));
-        JTablePinturas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                JTablePinturasMouseEntered(evt);
-            }
-        });
         jScrollPanePint.setViewportView(JTablePinturas);
 
         BtnAtrasPint.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -601,7 +567,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 .addComponent(jScrollPanePint, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(BtnModifiPint)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
 
         jPanelTabSella.setBackground(new java.awt.Color(102, 204, 255));
@@ -635,14 +601,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID_Sellador", "Nombre", "Tipo", "Presentación", "Cantidad_Por_Unidad", "Unidad_Medida", "Precio", "Cantidad"
+                "ID_Sellador", "Nombre", "Tipo_Imper", "Presentación", "Cantidad_Por_Unidad", "Unidad_Medida", "Precio", "Cantidad"
             }
         ));
-        jTableSella.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jTableSellaMouseEntered(evt);
-            }
-        });
         jScrollPaneSella.setViewportView(jTableSella);
 
         javax.swing.GroupLayout jPanelTabSellaLayout = new javax.swing.GroupLayout(jPanelTabSella);
@@ -838,7 +799,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "ID_Accesorio", "Nombre", "TIpo", "Precio", "Cantidad"
+                "ID_Accesorio", "Nombre", "TIpo_Acces", "Precio", "Cantidad"
             }
         ));
         jScrollPaneAcceso.setViewportView(jTableAcceso);
@@ -1274,6 +1235,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         BtnAñadirSella.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         BtnAñadirSella.setText("Aceptar");
+        BtnAñadirSella.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAñadirSellaActionPerformed(evt);
+            }
+        });
 
         jLabelAgregarTipoSella.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelAgregarTipoSella.setText("Tipo:");
@@ -1290,9 +1256,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabelAgregarPrecioSella.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelAgregarPrecioSella.setText("Precio:");
 
-        jLabelAgregarIDSella.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelAgregarIDSella.setText("ID:");
-
         jLabelAgregarCantidadSella.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelAgregarCantidadSella.setText("Cantidad:");
 
@@ -1304,59 +1267,50 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jPanelAgregarSellaLayout.setHorizontalGroup(
             jPanelAgregarSellaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelAgregarSellaLayout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addGroup(jPanelAgregarSellaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BtnAñadirSella)
+                    .addComponent(jLabelAgregarSella))
+                .addContainerGap(106, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAgregarSellaLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanelAgregarSellaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelAgregarSellaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarSellaLayout.createSequentialGroup()
+                            .addComponent(jLabelAgregarTipoSella)
+                            .addGap(18, 18, 18)
+                            .addComponent(jTextFieldAgregarTipoSella))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarSellaLayout.createSequentialGroup()
+                            .addComponent(jLabelAgregarNomSella)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jTextFieldAgregarNomSella, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanelAgregarSellaLayout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addGroup(jPanelAgregarSellaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(BtnAñadirSella)
-                            .addComponent(jLabelAgregarSella)))
+                        .addComponent(jLabelAgregarCantidadSella)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldAgregarCantSella, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelAgregarSellaLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanelAgregarSellaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelAgregarSellaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarSellaLayout.createSequentialGroup()
-                                    .addComponent(jLabelAgregarTipoSella)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jTextFieldAgregarTipoSella))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarSellaLayout.createSequentialGroup()
-                                    .addComponent(jLabelAgregarIDSella)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jTextFieldAgregarIDSella, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarSellaLayout.createSequentialGroup()
-                                    .addComponent(jLabelAgregarNomSella)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jTextFieldAgregarNomSella, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanelAgregarSellaLayout.createSequentialGroup()
-                                .addComponent(jLabelAgregarCantidadSella)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextFieldAgregarCantSella, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelAgregarSellaLayout.createSequentialGroup()
-                                .addComponent(jLabelAgregarPrecioSella)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextFieldAgregarPrecioSella, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelAgregarSellaLayout.createSequentialGroup()
-                                .addComponent(jLabelAgregarPresentacionSella)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldAgregarPresenSella))
-                            .addGroup(jPanelAgregarSellaLayout.createSequentialGroup()
-                                .addComponent(jLabelAgregarUniMedSella)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldAgregarUniMedSella, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelAgregarSellaLayout.createSequentialGroup()
-                                .addComponent(jLabelAgregarCantUniSella)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldAgregarCantUniSella, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(24, 24, 24))
+                        .addComponent(jLabelAgregarPrecioSella)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldAgregarPrecioSella, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelAgregarSellaLayout.createSequentialGroup()
+                        .addComponent(jLabelAgregarPresentacionSella)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldAgregarPresenSella))
+                    .addGroup(jPanelAgregarSellaLayout.createSequentialGroup()
+                        .addComponent(jLabelAgregarUniMedSella)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldAgregarUniMedSella, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelAgregarSellaLayout.createSequentialGroup()
+                        .addComponent(jLabelAgregarCantUniSella)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldAgregarCantUniSella, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanelAgregarSellaLayout.setVerticalGroup(
             jPanelAgregarSellaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelAgregarSellaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelAgregarSella)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelAgregarSellaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelAgregarIDSella)
-                    .addComponent(jTextFieldAgregarIDSella, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelAgregarSellaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelAgregarNomSella)
@@ -1385,7 +1339,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanelAgregarSellaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldAgregarCantSella, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelAgregarCantidadSella))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
                 .addComponent(BtnAñadirSella)
                 .addGap(15, 15, 15))
         );
@@ -1401,6 +1355,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         BtnModificarSella.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         BtnModificarSella.setText("Aceptar");
+        BtnModificarSella.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnModificarSellaActionPerformed(evt);
+            }
+        });
 
         jLabelModificarPresentacionSella.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelModificarPresentacionSella.setText("Presentación:");
@@ -1529,6 +1488,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         BtnEliminarSella.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         BtnEliminarSella.setText("Aceptar");
+        BtnEliminarSella.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminarSellaActionPerformed(evt);
+            }
+        });
 
         jLabelEliminarIDSella.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelEliminarIDSella.setText("ID:");
@@ -1604,9 +1568,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         BtnAñadirImper.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         BtnAñadirImper.setText("Aceptar");
-
-        jLabelAgregarIDImper.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelAgregarIDImper.setText("ID:");
+        BtnAñadirImper.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAñadirImperActionPerformed(evt);
+            }
+        });
 
         jLabelAgregarCantidadImper.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelAgregarCantidadImper.setText("Cantidad:");
@@ -1638,7 +1604,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanelAgregarImperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(BtnAñadirImper)
                     .addComponent(jLabelAgregarImper))
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
             .addGroup(jPanelAgregarImperLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(jPanelAgregarImperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1647,10 +1613,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
                             .addComponent(jLabelAgregarTipoImper)
                             .addGap(18, 18, 18)
                             .addComponent(jTextFieldAgregarTipoImper))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarImperLayout.createSequentialGroup()
-                            .addComponent(jLabelAgregarIDImper)
-                            .addGap(18, 18, 18)
-                            .addComponent(jTextFieldAgregarIDImper, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarImperLayout.createSequentialGroup()
                             .addComponent(jLabelAgregarNomImper)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1666,7 +1628,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                     .addGroup(jPanelAgregarImperLayout.createSequentialGroup()
                         .addComponent(jLabelAgregarPresentacionImper)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextFieldAgregarPresenImper))
+                        .addComponent(jTextFieldAgregarPresenImper, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE))
                     .addGroup(jPanelAgregarImperLayout.createSequentialGroup()
                         .addComponent(jLabelAgregarUniMedImper)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1682,10 +1644,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
             .addGroup(jPanelAgregarImperLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelAgregarImper)
-                .addGap(18, 18, 18)
-                .addGroup(jPanelAgregarImperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelAgregarIDImper)
-                    .addComponent(jTextFieldAgregarIDImper, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelAgregarImperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelAgregarNomImper)
@@ -1714,7 +1672,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanelAgregarImperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldAgregarCantImper, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelAgregarCantidadImper))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
                 .addComponent(BtnAñadirImper)
                 .addGap(15, 15, 15))
         );
@@ -1730,6 +1688,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         BtnModificarImper.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         BtnModificarImper.setText("Aceptar");
+        BtnModificarImper.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnModificarImperActionPerformed(evt);
+            }
+        });
 
         jLabelModificarNomImper.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelModificarNomImper.setText("Nombre:");
@@ -1859,6 +1822,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         BtnEliminarImper.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         BtnEliminarImper.setText("Aceptar");
+        BtnEliminarImper.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminarImperActionPerformed(evt);
+            }
+        });
 
         jLabelEliminarIDImper.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelEliminarIDImper.setText("ID:");
@@ -1934,9 +1902,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         BtnAñadirMad.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         BtnAñadirMad.setText("Aceptar");
-
-        jLabelAgregarIDMad.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelAgregarIDMad.setText("ID:");
+        BtnAñadirMad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAñadirMadActionPerformed(evt);
+            }
+        });
 
         jLabelAgregarCantidadMad.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelAgregarCantidadMad.setText("Cantidad:");
@@ -1964,23 +1934,21 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jPanelAgregarMadLayout.setHorizontalGroup(
             jPanelAgregarMadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelAgregarMadLayout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addGroup(jPanelAgregarMadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BtnAñadirMad)
-                    .addComponent(jLabelAgregarMad))
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addComponent(jLabelAgregarPresentacionMad)
+                .addGap(18, 18, 18)
+                .addComponent(jTextFieldAgregarPresenMad))
             .addGroup(jPanelAgregarMadLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
                 .addGroup(jPanelAgregarMadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelAgregarMadLayout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addGroup(jPanelAgregarMadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BtnAñadirMad)
+                            .addComponent(jLabelAgregarMad)))
                     .addGroup(jPanelAgregarMadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarMadLayout.createSequentialGroup()
                             .addComponent(jLabelAgregarTipoMad)
                             .addGap(18, 18, 18)
                             .addComponent(jTextFieldAgregarTipoMad))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarMadLayout.createSequentialGroup()
-                            .addComponent(jLabelAgregarIDMad)
-                            .addGap(18, 18, 18)
-                            .addComponent(jTextFieldAgregarIDMad, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarMadLayout.createSequentialGroup()
                             .addComponent(jLabelAgregarNomMad)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1994,10 +1962,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextFieldAgregarPrecioMad, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelAgregarMadLayout.createSequentialGroup()
-                        .addComponent(jLabelAgregarPresentacionMad)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextFieldAgregarPresenMad))
-                    .addGroup(jPanelAgregarMadLayout.createSequentialGroup()
                         .addComponent(jLabelAgregarUniMedMad)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextFieldAgregarUniMedMad, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2005,17 +1969,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
                         .addComponent(jLabelAgregarCantUniMad)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextFieldAgregarCantUniMad, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         jPanelAgregarMadLayout.setVerticalGroup(
             jPanelAgregarMadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelAgregarMadLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelAgregarMad)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelAgregarMadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelAgregarIDMad)
-                    .addComponent(jTextFieldAgregarIDMad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelAgregarMadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelAgregarNomMad)
@@ -2044,7 +2004,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanelAgregarMadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldAgregarCantMad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelAgregarCantidadMad))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
                 .addComponent(BtnAñadirMad)
                 .addGap(15, 15, 15))
         );
@@ -2060,6 +2020,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         BtnEliminarMad.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         BtnEliminarMad.setText("Aceptar");
+        BtnEliminarMad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminarMadActionPerformed(evt);
+            }
+        });
 
         jLabelEliminarIDMad.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelEliminarIDMad.setText("ID:");
@@ -2131,6 +2096,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         BtnModificarMad.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         BtnModificarMad.setText("Aceptar");
+        BtnModificarMad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnModificarMadActionPerformed(evt);
+            }
+        });
 
         jLabelModificarCantidadMad.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelModificarCantidadMad.setText("Cantidad:");
@@ -2263,6 +2233,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         BtnAñadirAcceso.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         BtnAñadirAcceso.setText("Aceptar");
+        BtnAñadirAcceso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAñadirAccesoActionPerformed(evt);
+            }
+        });
 
         jLabelAgregarTipoAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelAgregarTipoAcceso.setText("Tipo:");
@@ -2272,18 +2247,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jLabelAgregarNomAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelAgregarNomAcceso.setText("Nombre:");
-
-        jLabelAgregarPresentacionAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelAgregarPresentacionAcceso.setText("Presentación:");
-
-        jLabelAgregarCantUniAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelAgregarCantUniAcceso.setText("Cantidad unidad:");
-
-        jLabelAgregarUniMedAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelAgregarUniMedAcceso.setText("Unidad de medida:");
-
-        jLabelAgregarIDAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelAgregarIDAcceso.setText("ID:");
 
         jLabelAgregarCantidadAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelAgregarCantidadAcceso.setText("Cantidad:");
@@ -2300,21 +2263,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
                             .addComponent(BtnAñadirAcceso)
                             .addComponent(jLabelAgregarAcceso)))
                     .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addGap(42, 42, 42)
                         .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
-                                .addComponent(jLabelAgregarPresentacionAcceso)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldAgregarPresenAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarAccesoLayout.createSequentialGroup()
                                     .addComponent(jLabelAgregarTipoAcceso)
                                     .addGap(18, 18, 18)
                                     .addComponent(jTextFieldAgregarTipoAcceso))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarAccesoLayout.createSequentialGroup()
-                                    .addComponent(jLabelAgregarIDAcceso)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jTextFieldAgregarIDAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarAccesoLayout.createSequentialGroup()
                                     .addComponent(jLabelAgregarNomAcceso)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -2326,26 +2281,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
                             .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
                                 .addComponent(jLabelAgregarPrecioAcceso)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextFieldAgregarPrecioAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
-                                .addComponent(jLabelAgregarUniMedAcceso)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldAgregarUniMedAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
-                                .addComponent(jLabelAgregarCantUniAcceso)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldAgregarCantUniAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(19, Short.MAX_VALUE))
+                                .addComponent(jTextFieldAgregarPrecioAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanelAgregarAccesoLayout.setVerticalGroup(
             jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelAgregarAcceso)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelAgregarIDAcceso)
-                    .addComponent(jTextFieldAgregarIDAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelAgregarNomAcceso)
@@ -2356,25 +2299,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
                     .addComponent(jTextFieldAgregarTipoAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelAgregarPresentacionAcceso)
-                    .addComponent(jTextFieldAgregarPresenAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelAgregarCantUniAcceso)
-                    .addComponent(jTextFieldAgregarCantUniAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelAgregarUniMedAcceso)
-                    .addComponent(jTextFieldAgregarUniMedAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelAgregarPrecioAcceso)
                     .addComponent(jTextFieldAgregarPrecioAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldAgregarCantAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelAgregarCantidadAcceso))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 250, Short.MAX_VALUE)
                 .addComponent(BtnAñadirAcceso)
                 .addGap(15, 15, 15))
         );
@@ -2390,6 +2321,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         BtnModificarAcceso.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         BtnModificarAcceso.setText("Aceptar");
+        BtnModificarAcceso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnModificarAccesoActionPerformed(evt);
+            }
+        });
 
         jLabelModificarTipoAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelModificarTipoAcceso.setText("Tipo:");
@@ -2403,19 +2339,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabelModificarCantidadAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelModificarCantidadAcceso.setText("Cantidad:");
 
-        jLabelModificarCantUniAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelModificarCantUniAcceso.setText("Cantidad unidad:");
-
-        jLabelModificarUniMedAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelModificarUniMedAcceso.setText("Unidad de medida:");
-
         jLabelModificarIDAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelModificarIDAcceso.setText("ID:");
 
         jTextFieldModificarIDAcceso.setText("                    ");
-
-        jLabelModificarPresentacionAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelModificarPresentacionAcceso.setText("Presentación:");
 
         javax.swing.GroupLayout jPanelModificarAccesoLayout = new javax.swing.GroupLayout(jPanelModificarAcceso);
         jPanelModificarAcceso.setLayout(jPanelModificarAccesoLayout);
@@ -2443,27 +2370,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextFieldModificarNomAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelModificarAccesoLayout.createSequentialGroup()
-                        .addComponent(jLabelModificarPresentacionAcceso)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextFieldModificarPresenAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelModificarAccesoLayout.createSequentialGroup()
                         .addComponent(jLabelModificarCantidadAcceso)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextFieldModificarCantAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelModificarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanelModificarAccesoLayout.createSequentialGroup()
-                            .addComponent(jLabelModificarUniMedAcceso)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextFieldModificarUniMedAcceso))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelModificarAccesoLayout.createSequentialGroup()
-                            .addComponent(jLabelModificarCantUniAcceso)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextFieldModificarCantUniAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanelModificarAccesoLayout.createSequentialGroup()
                         .addComponent(jLabelModificarPrecioAcceso)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextFieldModificarPrecioAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         jPanelModificarAccesoLayout.setVerticalGroup(
             jPanelModificarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2484,25 +2398,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
                     .addComponent(jTextFieldModificarTipoAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelModificarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelModificarPresentacionAcceso)
-                    .addComponent(jTextFieldModificarPresenAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelModificarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelModificarCantUniAcceso)
-                    .addComponent(jTextFieldModificarCantUniAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelModificarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelModificarUniMedAcceso)
-                    .addComponent(jTextFieldModificarUniMedAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelModificarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelModificarPrecioAcceso)
                     .addComponent(jTextFieldModificarPrecioAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelModificarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldModificarCantAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelModificarCantidadAcceso))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 213, Short.MAX_VALUE)
                 .addComponent(BtnModificarAcceso)
                 .addGap(18, 18, 18))
         );
@@ -2518,6 +2420,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         BtnEliminarAcceso.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         BtnEliminarAcceso.setText("Aceptar");
+        BtnEliminarAcceso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminarAccesoActionPerformed(evt);
+            }
+        });
 
         jLabelEliminarIDAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelEliminarIDAcceso.setText("ID:");
@@ -2782,31 +2689,49 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void BtnAccesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAccesoActionPerformed
         // TODO add your handling code here:
         changePanel(jPanelTabAcceso);
+        if (panelAccesorios != null) {
+            panelAccesorios.cargarDatos();
+            }
     }//GEN-LAST:event_BtnAccesoActionPerformed
 
     private void BtnMadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMadeActionPerformed
         // TODO add your handling code here:
         changePanel(jPanelTabMad);
+        if (panelMaderas != null) {
+        panelMaderas.cargarDatos();
+        }
     }//GEN-LAST:event_BtnMadeActionPerformed
 
     private void BtnImperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnImperActionPerformed
         // TODO add your handling code here:
         changePanel(jPanelTabImper);
+        if (panelImpermeabilizantes != null) {
+          panelImpermeabilizantes.cargarDatos();
+        }
     }//GEN-LAST:event_BtnImperActionPerformed
 
     private void BtnSellaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSellaActionPerformed
         // TODO add your handling code here:
         changePanel(jPanelTabSella);
+        if (panelSelladores != null) {
+          panelSelladores.cargarDatos();
+        }
     }//GEN-LAST:event_BtnSellaActionPerformed
 
     private void BtnPintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPintActionPerformed
         // TODO add your handling code here:
         changePanel(jPanelTabPint);
+        if (panelPinturas != null) {
+            panelPinturas.cargarDatos();
+        }
     }//GEN-LAST:event_BtnPintActionPerformed
 
     private void BtnModifiPintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModifiPintActionPerformed
         // TODO add your handling code here:
         changePanel(jPanelAmePint);
+       if (panelSelladores != null) {
+            panelSelladores.cargarDatos();
+        }
     }//GEN-LAST:event_BtnModifiPintActionPerformed
 
     private void BtnModifiSellaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModifiSellaActionPerformed
@@ -2861,8 +2786,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnMnPrdPintActionPerformed
 
     private void BtnAtrasTabSellaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtrasTabSellaActionPerformed
-        // TODO add your handling code here:
         changePanel(jPanelTabSella);
+        if (panelSelladores != null) {
+            panelSelladores.cargarDatos();
+        }
     }//GEN-LAST:event_BtnAtrasTabSellaActionPerformed
 
     private void BtnMnPrdSellaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMnPrdSellaActionPerformed
@@ -2873,6 +2800,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void BtnAtrasTabImperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtrasTabImperActionPerformed
         // TODO add your handling code here:
         changePanel(jPanelTabImper);
+        if (panelImpermeabilizantes != null) {
+           panelImpermeabilizantes.cargarDatos();
+        }
     }//GEN-LAST:event_BtnAtrasTabImperActionPerformed
 
     private void BtnMnPrdImperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMnPrdImperActionPerformed
@@ -2883,6 +2813,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void BtnAtrasTabMadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtrasTabMadActionPerformed
         // TODO add your handling code here:
         changePanel(jPanelTabMad);
+        if (panelMaderas != null) {
+           panelMaderas.cargarDatos();
+        }
     }//GEN-LAST:event_BtnAtrasTabMadActionPerformed
 
     private void BtnMnPrdMadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMnPrdMadActionPerformed
@@ -2893,6 +2826,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void BtnAtrasTabAccesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtrasTabAccesoActionPerformed
         // TODO add your handling code here:
         changePanel(jPanelTabAcceso);
+        if (panelAccesorios != null) {
+        panelAccesorios.cargarDatos();
+    }
     }//GEN-LAST:event_BtnAtrasTabAccesoActionPerformed
 
     private void BtnMnPrdAccesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMnPrdAccesoActionPerformed
@@ -2916,58 +2852,21 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnModifiAccesoActionPerformed
 
     private void BtnEliminarPintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarPintActionPerformed
-    PanelABCPint PintBaja = new PanelABCPint(
-        jTextFieldAgregarNomPint,
-        jTextFieldAgregarTipoPint,
-        jTextFieldAgregarAcabadoPint,
-        jTextFieldAgregarPresenPint,
-        jTextFieldAgregarCantUniPint,
-        jTextFieldAgregarUniMedPint,
-        jTextFieldAgregarPrecioPint,
-        jTextFieldAgregarCantPint,
-        JTablePinturas 
-    );
-    
-    // Intentar obtener el ID y eliminar
-    try {
-        int id = Integer.parseInt(jTextFieldEliminarIDPint.getText().trim());
-        if (PintBaja.Baja(id)) {
-            jTextFieldEliminarIDPint.setText(""); // Limpiar después de eliminar
+        try {
+            int id = Integer.parseInt(jTextFieldEliminarIDPint.getText().trim());
+            if (panelPinturas != null && panelPinturas.Baja(id)) {
+                jTextFieldEliminarIDPint.setText("");
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Por favor ingrese un ID válido", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Por favor ingrese un ID válido", "Error", JOptionPane.ERROR_MESSAGE);
-      }
     }//GEN-LAST:event_BtnEliminarPintActionPerformed
 
     private void BtnAñadirPintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAñadirPintActionPerformed
-         PanelABCPint PintAlta = new PanelABCPint(
-        jTextFieldAgregarNomPint,
-        jTextFieldAgregarTipoPint,
-        jTextFieldAgregarAcabadoPint,
-        jTextFieldAgregarPresenPint,
-        jTextFieldAgregarCantUniPint,
-        jTextFieldAgregarUniMedPint,
-        jTextFieldAgregarPrecioPint,
-        jTextFieldAgregarCantPint,
-        JTablePinturas 
-    );
-        PintAlta.Alta();        
+        if (panelPinturas != null) {
+            panelPinturas.Alta();
+        }  
     }//GEN-LAST:event_BtnAñadirPintActionPerformed
-
-    private void JTablePinturasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTablePinturasMouseEntered
-        // TODO add your handling code here:
-        PanelABCPint PintVer = new PanelABCPint(
-        jTextFieldAgregarNomPint,
-        jTextFieldAgregarTipoPint,
-        jTextFieldAgregarAcabadoPint,
-        jTextFieldAgregarPresenPint,
-        jTextFieldAgregarCantUniPint,
-        jTextFieldAgregarUniMedPint,
-        jTextFieldAgregarPrecioPint,
-        jTextFieldAgregarCantPint,
-        JTablePinturas 
-    );  
-    }//GEN-LAST:event_JTablePinturasMouseEntered
 
     private void BtnModificarPintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarPintActionPerformed
     PanelABCPint PintCambio = new PanelABCPint(
@@ -2988,21 +2887,166 @@ public class FrmPrincipal extends javax.swing.JFrame {
             // Éxito - los campos se limpian automáticamente
         }
     } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Por favor ingrese un ID válido", "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Por favor ingrese un ID válido", "Error", JOptionPane.ERROR_MESSAGE);   
     }    }//GEN-LAST:event_BtnModificarPintActionPerformed
 
-    private void jTableSellaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableSellaMouseEntered
-        PanelABCSella TablaSellaVer = new PanelABCSella(
-        jTextFieldAgregarNomSella,
-        jTextFieldAgregarTipoSella,
-        jTextFieldAgregarPresenSella,
-        jTextFieldAgregarCantUniSella,
-        jTextFieldAgregarUniMedSella,
-        jTextFieldAgregarPrecioSella,
-        jTextFieldAgregarCantSella,
+    private void BtnAñadirSellaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAñadirSellaActionPerformed
+         if (panelSelladores != null) {
+            panelSelladores.Alta();
+        }
+    }//GEN-LAST:event_BtnAñadirSellaActionPerformed
+
+    private void BtnEliminarSellaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarSellaActionPerformed
+        try {
+            int id = Integer.parseInt(jTextFieldEliminarIDSella.getText().trim());
+            if (panelSelladores != null && panelSelladores.Baja(id)) {
+                jTextFieldEliminarIDSella.setText("");
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Por favor ingrese un ID válido", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnEliminarSellaActionPerformed
+
+    private void BtnModificarSellaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarSellaActionPerformed
+        // TODO add your handling code here:
+        PanelABCSella SellaCambio = new PanelABCSella(
+        jTextFieldModificarNomSella,
+        jTextFieldModificarTipoSella,
+        jTextFieldModificarPresenSella,
+        jTextFieldModificarCantUniSella,
+        jTextFieldModificarUniMedSella,
+        jTextFieldModificarPrecioSella,
+        jTextFieldModificarCantSella,
         jTableSella
+                
+        
+        
+        );
+    try {
+        int id = Integer.parseInt(jTextFieldModificarIDSella.getText().trim());
+        if (SellaCambio.Cambio(id)) {
+            // Éxito
+        }
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Por favor ingrese un ID válido", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_BtnModificarSellaActionPerformed
+
+    private void BtnAñadirAccesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAñadirAccesoActionPerformed
+        // TODO add your handling code here:
+    changePanel(jPanelTabAcceso);
+    if (panelAccesorios != null) {
+         panelAccesorios.Alta();
+      }
+    }//GEN-LAST:event_BtnAñadirAccesoActionPerformed
+
+    private void BtnAñadirImperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAñadirImperActionPerformed
+    if (panelImpermeabilizantes != null) {
+        panelImpermeabilizantes.Alta();
+        }
+    }//GEN-LAST:event_BtnAñadirImperActionPerformed
+
+    private void BtnEliminarImperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarImperActionPerformed
+    try {
+        int id = Integer.parseInt(jTextFieldEliminarIDImper.getText().trim());
+        if (panelImpermeabilizantes != null && panelImpermeabilizantes.Baja(id)) {
+            jTextFieldEliminarIDImper.setText("");
+        }
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Por favor ingrese un ID válido", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_BtnEliminarImperActionPerformed
+
+    private void BtnModificarImperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarImperActionPerformed
+    PanelABCImper panelTemp = new PanelABCImper(
+        jTextFieldModificarNomImper,
+        jTextFieldModificarTipoImper,
+        jTextFieldModificarPresenImper,
+        jTextFieldModificarCantUniImper,
+        jTextFieldModificarUniMedImper,
+        jTextFieldModificarPrecioImper,
+        jTextFieldModificarCantImper,
+        jTableImper
     );
-    }//GEN-LAST:event_jTableSellaMouseEntered
+    
+    try {
+        int id = Integer.parseInt(jTextFieldModificarIDImper.getText().trim());
+        panelTemp.Cambio(id);
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Por favor ingrese un ID válido", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_BtnModificarImperActionPerformed
+
+    private void BtnAñadirMadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAñadirMadActionPerformed
+        // TODO add your handling code here:
+        if (panelMaderas != null) {
+           panelMaderas.Alta();
+        }  
+    }//GEN-LAST:event_BtnAñadirMadActionPerformed
+
+    private void BtnModificarMadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarMadActionPerformed
+        // TODO add your handling code here:
+        PanelABCMad panelTemp = new PanelABCMad(
+            jTextFieldModificarNomMad,
+            jTextFieldModificarTipoMad,
+            jTextFieldModificarPresenMad,
+            jTextFieldModificarCantUniMad,
+            jTextFieldModificarUniMedMad,
+            jTextFieldModificarPrecioMad,
+            jTextFieldModificarCantMad,
+            jTableMad
+        );
+
+        try {
+            int id = Integer.parseInt(jTextFieldModificarIDMad.getText().trim());
+            panelTemp.Cambio(id);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Por favor ingrese un ID válido", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_BtnModificarMadActionPerformed
+
+    private void BtnEliminarMadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarMadActionPerformed
+        // TODO add your handling code here:
+            try {
+            int id = Integer.parseInt(jTextFieldEliminarIDMad.getText().trim());
+            if (panelMaderas != null && panelMaderas.Baja(id)) {
+                jTextFieldEliminarIDMad.setText("");
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Por favor ingrese un ID válido", "Error", JOptionPane.ERROR_MESSAGE);
+         }
+    }//GEN-LAST:event_BtnEliminarMadActionPerformed
+
+    private void BtnEliminarAccesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarAccesoActionPerformed
+        // TODO add your handling code here:
+        try {
+            int id = Integer.parseInt(jTextFieldEliminarIDAcceso.getText().trim());
+            if (panelAccesorios != null && panelAccesorios.Baja(id)) {
+                jTextFieldEliminarIDAcceso.setText("");
+            }
+        } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Por favor ingrese un ID válido", "Error", JOptionPane.ERROR_MESSAGE);
+      }
+    }//GEN-LAST:event_BtnEliminarAccesoActionPerformed
+
+    private void BtnModificarAccesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarAccesoActionPerformed
+        // TODO add your handling code here:
+        PanelABCAcceso panelTemp = new PanelABCAcceso(
+        jTextFieldModificarNomAcceso,
+        jTextFieldModificarTipoAcceso,
+        jTextFieldModificarPrecioAcceso,
+        jTextFieldModificarCantAcceso,
+        jTableAcceso
+    );
+    
+    try {
+        int id = Integer.parseInt(jTextFieldModificarIDAcceso.getText().trim());
+        panelTemp.Cambio(id);
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Por favor ingrese un ID válido", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_BtnModificarAccesoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3040,6 +3084,70 @@ public class FrmPrincipal extends javax.swing.JFrame {
         });
     }
 //AQUI EMPIEZAN NUESTROS MÉTODOS
+private void inicializarPaneles() {
+    try {            
+            // Inicializar panel de Pinturas
+            panelPinturas = new PanelABCPint(
+                jTextFieldAgregarNomPint,
+                jTextFieldAgregarTipoPint,
+                jTextFieldAgregarAcabadoPint,
+                jTextFieldAgregarPresenPint,
+                jTextFieldAgregarCantUniPint,
+                jTextFieldAgregarUniMedPint,
+                jTextFieldAgregarPrecioPint,
+                jTextFieldAgregarCantPint,
+                JTablePinturas 
+            );
+            
+            // Inicializar panel de Selladores
+            panelSelladores = new PanelABCSella(
+                jTextFieldAgregarNomSella,
+                jTextFieldAgregarTipoSella,
+                jTextFieldAgregarPresenSella,
+                jTextFieldAgregarCantUniSella,
+                jTextFieldAgregarUniMedSella,
+                jTextFieldAgregarPrecioSella,
+                jTextFieldAgregarCantSella,
+                jTableSella
+            );        
+            // Inicializar panel de Impermeabilizantes
+            panelImpermeabilizantes = new PanelABCImper(
+                jTextFieldAgregarNomImper,
+                jTextFieldAgregarTipoImper,
+                jTextFieldAgregarPresenImper,
+                jTextFieldAgregarCantUniImper,
+                jTextFieldAgregarUniMedImper,
+                jTextFieldAgregarPrecioImper,
+                jTextFieldAgregarCantImper,
+                jTableImper
+            );
+        
+            // Inicializar panel de Maderas
+            panelMaderas = new PanelABCMad(
+                jTextFieldAgregarNomMad,
+                jTextFieldAgregarTipoMad,
+                jTextFieldAgregarPresenMad,
+                jTextFieldAgregarCantUniMad,
+                jTextFieldAgregarUniMedMad,
+                jTextFieldAgregarPrecioMad,
+                jTextFieldAgregarCantMad,
+                jTableMad
+        );
+            
+            //Inicializar panel de Accesorios
+            panelAccesorios = new PanelABCAcceso(
+                jTextFieldAgregarNomAcceso,
+                jTextFieldAgregarTipoAcceso,
+                jTextFieldAgregarPrecioAcceso,
+                jTextFieldAgregarCantAcceso,
+                jTableAcceso
+        );
+        } catch (Exception e) {
+            System.out.println("Error al inicializar paneles: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
 
     
     
@@ -3106,7 +3214,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelAcceso;
     private javax.swing.JLabel jLabelAgregarAcabadoPint;
     private javax.swing.JLabel jLabelAgregarAcceso;
-    private javax.swing.JLabel jLabelAgregarCantUniAcceso;
     private javax.swing.JLabel jLabelAgregarCantUniImper;
     private javax.swing.JLabel jLabelAgregarCantUniMad;
     private javax.swing.JLabel jLabelAgregarCantUniPint;
@@ -3116,10 +3223,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelAgregarCantidadMad;
     private javax.swing.JLabel jLabelAgregarCantidadPint;
     private javax.swing.JLabel jLabelAgregarCantidadSella;
-    private javax.swing.JLabel jLabelAgregarIDAcceso;
-    private javax.swing.JLabel jLabelAgregarIDImper;
-    private javax.swing.JLabel jLabelAgregarIDMad;
-    private javax.swing.JLabel jLabelAgregarIDSella;
     private javax.swing.JLabel jLabelAgregarImper;
     private javax.swing.JLabel jLabelAgregarMad;
     private javax.swing.JLabel jLabelAgregarNomAcceso;
@@ -3133,7 +3236,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelAgregarPrecioMad;
     private javax.swing.JLabel jLabelAgregarPrecioPint;
     private javax.swing.JLabel jLabelAgregarPrecioSella;
-    private javax.swing.JLabel jLabelAgregarPresentacionAcceso;
     private javax.swing.JLabel jLabelAgregarPresentacionImper;
     private javax.swing.JLabel jLabelAgregarPresentacionMad;
     private javax.swing.JLabel jLabelAgregarPresentacionPint;
@@ -3144,7 +3246,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelAgregarTipoMad;
     private javax.swing.JLabel jLabelAgregarTipoPint;
     private javax.swing.JLabel jLabelAgregarTipoSella;
-    private javax.swing.JLabel jLabelAgregarUniMedAcceso;
     private javax.swing.JLabel jLabelAgregarUniMedImper;
     private javax.swing.JLabel jLabelAgregarUniMedMad;
     private javax.swing.JLabel jLabelAgregarUniMedPint;
@@ -3163,7 +3264,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelMad;
     private javax.swing.JLabel jLabelModificarAcabadoPint;
     private javax.swing.JLabel jLabelModificarAcceso;
-    private javax.swing.JLabel jLabelModificarCantUniAcceso;
     private javax.swing.JLabel jLabelModificarCantUniImper;
     private javax.swing.JLabel jLabelModificarCantUniMad;
     private javax.swing.JLabel jLabelModificarCantUniPint;
@@ -3191,7 +3291,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelModificarPrecioMad;
     private javax.swing.JLabel jLabelModificarPrecioPint;
     private javax.swing.JLabel jLabelModificarPrecioSella;
-    private javax.swing.JLabel jLabelModificarPresentacionAcceso;
     private javax.swing.JLabel jLabelModificarPresentacionImper;
     private javax.swing.JLabel jLabelModificarPresentacionMad;
     private javax.swing.JLabel jLabelModificarPresentacionPint;
@@ -3202,7 +3301,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelModificarTipoMad;
     private javax.swing.JLabel jLabelModificarTipoPint;
     private javax.swing.JLabel jLabelModificarTipoSella;
-    private javax.swing.JLabel jLabelModificarUniMedAcceso;
     private javax.swing.JLabel jLabelModificarUniMedImper;
     private javax.swing.JLabel jLabelModificarUniMedMad;
     private javax.swing.JLabel jLabelModificarUniMedPint;
@@ -3255,15 +3353,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldAgregarCantMad;
     private javax.swing.JTextField jTextFieldAgregarCantPint;
     private javax.swing.JTextField jTextFieldAgregarCantSella;
-    private javax.swing.JTextField jTextFieldAgregarCantUniAcceso;
     private javax.swing.JTextField jTextFieldAgregarCantUniImper;
     private javax.swing.JTextField jTextFieldAgregarCantUniMad;
     private javax.swing.JTextField jTextFieldAgregarCantUniPint;
     private javax.swing.JTextField jTextFieldAgregarCantUniSella;
-    private javax.swing.JTextField jTextFieldAgregarIDAcceso;
-    private javax.swing.JTextField jTextFieldAgregarIDImper;
-    private javax.swing.JTextField jTextFieldAgregarIDMad;
-    private javax.swing.JTextField jTextFieldAgregarIDSella;
     private javax.swing.JTextField jTextFieldAgregarNomAcceso;
     private javax.swing.JTextField jTextFieldAgregarNomImper;
     private javax.swing.JTextField jTextFieldAgregarNomMad;
@@ -3274,7 +3367,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldAgregarPrecioMad;
     private javax.swing.JTextField jTextFieldAgregarPrecioPint;
     private javax.swing.JTextField jTextFieldAgregarPrecioSella;
-    private javax.swing.JTextField jTextFieldAgregarPresenAcceso;
     private javax.swing.JTextField jTextFieldAgregarPresenImper;
     private javax.swing.JTextField jTextFieldAgregarPresenMad;
     private javax.swing.JTextField jTextFieldAgregarPresenPint;
@@ -3284,7 +3376,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldAgregarTipoMad;
     private javax.swing.JTextField jTextFieldAgregarTipoPint;
     private javax.swing.JTextField jTextFieldAgregarTipoSella;
-    private javax.swing.JTextField jTextFieldAgregarUniMedAcceso;
     private javax.swing.JTextField jTextFieldAgregarUniMedImper;
     private javax.swing.JTextField jTextFieldAgregarUniMedMad;
     private javax.swing.JTextField jTextFieldAgregarUniMedPint;
@@ -3300,7 +3391,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldModificarCantMad;
     private javax.swing.JTextField jTextFieldModificarCantPint;
     private javax.swing.JTextField jTextFieldModificarCantSella;
-    private javax.swing.JTextField jTextFieldModificarCantUniAcceso;
     private javax.swing.JTextField jTextFieldModificarCantUniImper;
     private javax.swing.JTextField jTextFieldModificarCantUniMad;
     private javax.swing.JTextField jTextFieldModificarCantUniPint;
@@ -3320,7 +3410,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldModificarPrecioMad;
     private javax.swing.JTextField jTextFieldModificarPrecioPint;
     private javax.swing.JTextField jTextFieldModificarPrecioSella;
-    private javax.swing.JTextField jTextFieldModificarPresenAcceso;
     private javax.swing.JTextField jTextFieldModificarPresenImper;
     private javax.swing.JTextField jTextFieldModificarPresenMad;
     private javax.swing.JTextField jTextFieldModificarPresenPint;
@@ -3330,7 +3419,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldModificarTipoMad;
     private javax.swing.JTextField jTextFieldModificarTipoPint;
     private javax.swing.JTextField jTextFieldModificarTipoSella;
-    private javax.swing.JTextField jTextFieldModificarUniMedAcceso;
     private javax.swing.JTextField jTextFieldModificarUniMedImper;
     private javax.swing.JTextField jTextFieldModificarUniMedMad;
     private javax.swing.JTextField jTextFieldModificarUniMedPint;

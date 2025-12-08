@@ -1,5 +1,4 @@
 package Clases_Simples;
-
 import Clases_Abstractas.PanelABC;
 import Interfaces.cargarDatos;
 import java.sql.Connection;
@@ -9,127 +8,107 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-public class PanelABCSella extends PanelABC implements cargarDatos {
+/**
+ *
+ * @author HP_25
+ */
+public class PanelABCAcceso extends PanelABC implements cargarDatos {
     private JTextField txtNombre;
-    private JTextField txtTipo;
-    private JTextField txtPresentacion;
-    private JTextField txtCantidadUnidad;
-    private JTextField txtUnidadMedida;
     private JTextField txtPrecio;
     private JTextField txtCantidad;
-    private JTable tablaSelladores;
-
-    public PanelABCSella(JTextField txtNombre, JTextField txtTipo,
-                    JTextField txtPresentacion, JTextField txtCantidadUnidad,
-                    JTextField txtUnidadMedida, JTextField txtPrecio,
+    private JTextField txtTipoAcceso;
+    private JTable tablaAccesorios;
+    
+    public PanelABCAcceso(JTextField txtNombre, JTextField txtTipoAcceso, JTextField txtPrecio,
                     JTextField txtCantidad, JTable tabla) {
         super();
         this.txtNombre = txtNombre;
-        this.txtTipo = txtTipo;
-        this.txtPresentacion = txtPresentacion;
-        this.txtCantidadUnidad = txtCantidadUnidad;
-        this.txtUnidadMedida = txtUnidadMedida;
+        this.txtTipoAcceso = txtTipoAcceso;
         this.txtPrecio = txtPrecio;
         this.txtCantidad = txtCantidad;
-        this.tablaSelladores = tabla;
+        this.tablaAccesorios = tabla;
         cargarDatosIniciales();
     }
-
+    
     @Override
     protected String getNombreTabla() {
-        return "selladores";
+        return "accesorios";
     }   
-
+    
     @Override
     protected String getNombreCampoID() {
-        return "ID_Sellador";
+        return "ID_Accessorios";
     }
-
+    
     @Override
     protected String[] getNombresColumnas() {
         return new String[]{
             "Nombre",
-            "Tipo",
-            "Presentacion",
-            "Cantidad_Por_Unidad",
-            "Unidad_Medida",
+            "Tipo_Acceso",
             "Precio",
             "Cantidad"
         };
     }
-
+    
     @Override
     protected boolean validarCampos() {
         if (!campoNoVacio(txtNombre, "Nombre") ||
-            !campoNoVacio(txtTipo, "Tipo_Sellador") ||
-            !campoNoVacio(txtPresentacion, "Presentación") ||
-            !campoNoVacio(txtUnidadMedida, "Unidad de Medida")) {
+           !campoNoVacio(txtTipoAcceso, "Tipo_Acceso")) {
             return false;
         }
         
-        if (!esEnteroValido(txtCantidadUnidad, "Cantidad por Unidad") ||
-            !esEnteroValido(txtPrecio, "Precio") ||
+        if (!esEnteroValido(txtPrecio, "Precio") ||
             !esEnteroValido(txtCantidad, "Cantidad")) {
             return false;
         }
         return true;    
     }
-
+    
     @Override
     protected void limpiarCampos() {
         txtNombre.setText("");
-        txtTipo.setText("");
-        txtPresentacion.setText("");
-        txtCantidadUnidad.setText("");
-        txtUnidadMedida.setText("");
+        txtTipoAcceso.setText("");
         txtPrecio.setText("");
         txtCantidad.setText("");
     }
-
+    
     @Override
     protected Object[] getValoresDeCampos() {
         return new Object[] {
             txtNombre.getText().trim(),
-            txtTipo.getText().trim(),
-            txtPresentacion.getText().trim(),
-            Integer.parseInt(txtCantidadUnidad.getText()),
-            txtUnidadMedida.getText().trim(),
-            Integer.parseInt(txtPrecio.getText()),
-            Integer.parseInt(txtCantidad.getText())
+            txtTipoAcceso.getText().trim(),
+            Integer.parseInt(txtPrecio.getText().trim()),
+            Integer.parseInt(txtCantidad.getText().trim())
         };
     }
-
+    
     @Override
     public void cargarDatos() {
         Connection con = null;
         Statement st = null;
         ResultSet rs = null;
         
-        try {
+        try {            
             con = Conexion.getConexion();
             st = con.createStatement();
-            rs = st.executeQuery("SELECT * FROM selladores");
-
-            DefaultTableModel modelo = (DefaultTableModel) tablaSelladores.getModel();
+            rs = st.executeQuery("SELECT * FROM accesorios");
+            DefaultTableModel modelo = (DefaultTableModel) tablaAccesorios.getModel();
             
             modelo.setRowCount(0);
             
+            int filas = 0;
             while (rs.next()) {
-                Object[] columna = new Object[8];
-
-                columna[0] = rs.getInt("ID_Sellador");
+                Object[] columna = new Object[5];
+                columna[0] = rs.getInt("ID_Accessorios");
                 columna[1] = rs.getString("Nombre");
-                columna[2] = rs.getString("Tipo_Sellador");
-                columna[3] = rs.getString("Presentacion");
-                columna[4] = rs.getInt("Cantidad_Por_Unidad");
-                columna[5] = rs.getString("Unidad_Medida");
-                columna[6] = rs.getInt("Precio");
-                columna[7] = rs.getInt("Cantidad");
-
+                columna[2] = rs.getString("Tipo_Acceso");
+                columna[3] = rs.getInt("Precio");
+                columna[4] = rs.getInt("Cantidad");
                 modelo.addRow(columna);
-            }            
+                filas++;
+            }   
         } catch (Exception e) {
-            System.out.println("Error al cargar sella: " + e.getMessage());
+            System.out.println("Error al cargar accesorios: " + e.getMessage());
             e.printStackTrace();
             mostrarError("Error al cargar datos: " + e.getMessage());
         } finally {

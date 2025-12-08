@@ -297,16 +297,10 @@ public class FrmPrincipal extends FrameABC {
         jLabelAgregarAcceso = new javax.swing.JLabel();
         BtnAñadirAcceso = new javax.swing.JButton();
         jLabelAgregarTipoAcceso = new javax.swing.JLabel();
-        jTextFieldAgregarPresenAcceso = new javax.swing.JTextField();
         jLabelAgregarPrecioAcceso = new javax.swing.JLabel();
         jLabelAgregarNomAcceso = new javax.swing.JLabel();
         jTextFieldAgregarTipoAcceso = new javax.swing.JTextField();
-        jLabelAgregarPresentacionAcceso = new javax.swing.JLabel();
         jTextFieldAgregarCantAcceso = new javax.swing.JTextField();
-        jTextFieldAgregarCantUniAcceso = new javax.swing.JTextField();
-        jLabelAgregarCantUniAcceso = new javax.swing.JLabel();
-        jTextFieldAgregarUniMedAcceso = new javax.swing.JTextField();
-        jLabelAgregarUniMedAcceso = new javax.swing.JLabel();
         jTextFieldAgregarNomAcceso = new javax.swing.JTextField();
         jTextFieldAgregarPrecioAcceso = new javax.swing.JTextField();
         jLabelAgregarCantidadAcceso = new javax.swing.JLabel();
@@ -317,17 +311,11 @@ public class FrmPrincipal extends FrameABC {
         jLabelModificarPrecioAcceso = new javax.swing.JLabel();
         jTextFieldModificarCantAcceso = new javax.swing.JTextField();
         jLabelModificarNomAcceso = new javax.swing.JLabel();
-        jTextFieldModificarPresenAcceso = new javax.swing.JTextField();
         jLabelModificarCantidadAcceso = new javax.swing.JLabel();
-        jLabelModificarCantUniAcceso = new javax.swing.JLabel();
-        jLabelModificarUniMedAcceso = new javax.swing.JLabel();
         jLabelModificarIDAcceso = new javax.swing.JLabel();
-        jTextFieldModificarCantUniAcceso = new javax.swing.JTextField();
         jTextFieldModificarIDAcceso = new javax.swing.JTextField();
         jTextFieldModificarNomAcceso = new javax.swing.JTextField();
-        jLabelModificarPresentacionAcceso = new javax.swing.JLabel();
         jTextFieldModificarPrecioAcceso = new javax.swing.JTextField();
-        jTextFieldModificarUniMedAcceso = new javax.swing.JTextField();
         jTextFieldModificarTipoAcceso = new javax.swing.JTextField();
         jPanelEliminarAcceso = new javax.swing.JPanel();
         jLabelEliminarAcceso = new javax.swing.JLabel();
@@ -2216,15 +2204,6 @@ public class FrmPrincipal extends FrameABC {
         jLabelAgregarNomAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelAgregarNomAcceso.setText("Nombre:");
 
-        jLabelAgregarPresentacionAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelAgregarPresentacionAcceso.setText("Presentación:");
-
-        jLabelAgregarCantUniAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelAgregarCantUniAcceso.setText("Cantidad unidad:");
-
-        jLabelAgregarUniMedAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelAgregarUniMedAcceso.setText("Unidad de medida:");
-
         jLabelAgregarCantidadAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelAgregarCantidadAcceso.setText("Cantidad:");
 
@@ -2235,26 +2214,19 @@ public class FrmPrincipal extends FrameABC {
             .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
                 .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(BtnAñadirAcceso)
-                            .addComponent(jLabelAgregarAcceso)))
+                        .addGap(91, 91, 91)
+                        .addComponent(jLabelAgregarAcceso))
                     .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
-                                .addComponent(jLabelAgregarPresentacionAcceso)
+                                .addComponent(jLabelAgregarTipoAcceso)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextFieldAgregarPresenAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarAccesoLayout.createSequentialGroup()
-                                    .addComponent(jLabelAgregarTipoAcceso)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jTextFieldAgregarTipoAcceso))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAgregarAccesoLayout.createSequentialGroup()
-                                    .addComponent(jLabelAgregarNomAcceso)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jTextFieldAgregarNomAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jTextFieldAgregarTipoAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
+                                .addComponent(jLabelAgregarNomAcceso)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextFieldAgregarNomAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
                                 .addComponent(jLabelAgregarCantidadAcceso)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -2262,16 +2234,11 @@ public class FrmPrincipal extends FrameABC {
                             .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
                                 .addComponent(jLabelAgregarPrecioAcceso)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextFieldAgregarPrecioAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
-                                .addComponent(jLabelAgregarUniMedAcceso)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldAgregarUniMedAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
-                                .addComponent(jLabelAgregarCantUniAcceso)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldAgregarCantUniAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(19, Short.MAX_VALUE))
+                                .addComponent(jTextFieldAgregarPrecioAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanelAgregarAccesoLayout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addComponent(BtnAñadirAcceso)))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         jPanelAgregarAccesoLayout.setVerticalGroup(
             jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2288,27 +2255,15 @@ public class FrmPrincipal extends FrameABC {
                     .addComponent(jTextFieldAgregarTipoAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelAgregarPresentacionAcceso)
-                    .addComponent(jTextFieldAgregarPresenAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelAgregarCantUniAcceso)
-                    .addComponent(jTextFieldAgregarCantUniAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelAgregarUniMedAcceso)
-                    .addComponent(jTextFieldAgregarUniMedAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelAgregarPrecioAcceso)
                     .addComponent(jTextFieldAgregarPrecioAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelAgregarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldAgregarCantAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelAgregarCantidadAcceso))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                .addGap(63, 63, 63)
                 .addComponent(BtnAñadirAcceso)
-                .addGap(15, 15, 15))
+                .addContainerGap(176, Short.MAX_VALUE))
         );
 
         jPanelAmeAcceso.add(jPanelAgregarAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 270, -1));
@@ -2335,19 +2290,10 @@ public class FrmPrincipal extends FrameABC {
         jLabelModificarCantidadAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelModificarCantidadAcceso.setText("Cantidad:");
 
-        jLabelModificarCantUniAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelModificarCantUniAcceso.setText("Cantidad unidad:");
-
-        jLabelModificarUniMedAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelModificarUniMedAcceso.setText("Unidad de medida:");
-
         jLabelModificarIDAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabelModificarIDAcceso.setText("ID:");
 
         jTextFieldModificarIDAcceso.setText("                    ");
-
-        jLabelModificarPresentacionAcceso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabelModificarPresentacionAcceso.setText("Presentación:");
 
         javax.swing.GroupLayout jPanelModificarAccesoLayout = new javax.swing.GroupLayout(jPanelModificarAcceso);
         jPanelModificarAcceso.setLayout(jPanelModificarAccesoLayout);
@@ -2355,46 +2301,36 @@ public class FrmPrincipal extends FrameABC {
             jPanelModificarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelModificarAccesoLayout.createSequentialGroup()
                 .addContainerGap(94, Short.MAX_VALUE)
-                .addGroup(jPanelModificarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BtnModificarAcceso)
-                    .addComponent(jLabelModificarAcceso))
+                .addComponent(jLabelModificarAcceso)
                 .addGap(90, 90, 90))
             .addGroup(jPanelModificarAccesoLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
                 .addGroup(jPanelModificarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelModificarAccesoLayout.createSequentialGroup()
-                        .addComponent(jLabelModificarTipoAcceso)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextFieldModificarTipoAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanelModificarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanelModificarAccesoLayout.createSequentialGroup()
+                                .addComponent(jLabelModificarTipoAcceso)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldModificarTipoAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelModificarAccesoLayout.createSequentialGroup()
+                                .addComponent(jLabelModificarIDAcceso)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldModificarIDAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelModificarAccesoLayout.createSequentialGroup()
+                                .addComponent(jLabelModificarNomAcceso)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextFieldModificarNomAcceso))
+                            .addGroup(jPanelModificarAccesoLayout.createSequentialGroup()
+                                .addComponent(jLabelModificarCantidadAcceso)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextFieldModificarCantAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelModificarAccesoLayout.createSequentialGroup()
+                                .addComponent(jLabelModificarPrecioAcceso)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextFieldModificarPrecioAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanelModificarAccesoLayout.createSequentialGroup()
-                        .addComponent(jLabelModificarIDAcceso)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextFieldModificarIDAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelModificarAccesoLayout.createSequentialGroup()
-                        .addComponent(jLabelModificarNomAcceso)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldModificarNomAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelModificarAccesoLayout.createSequentialGroup()
-                        .addComponent(jLabelModificarPresentacionAcceso)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextFieldModificarPresenAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelModificarAccesoLayout.createSequentialGroup()
-                        .addComponent(jLabelModificarCantidadAcceso)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldModificarCantAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelModificarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanelModificarAccesoLayout.createSequentialGroup()
-                            .addComponent(jLabelModificarUniMedAcceso)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextFieldModificarUniMedAcceso))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelModificarAccesoLayout.createSequentialGroup()
-                            .addComponent(jLabelModificarCantUniAcceso)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextFieldModificarCantUniAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanelModificarAccesoLayout.createSequentialGroup()
-                        .addComponent(jLabelModificarPrecioAcceso)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldModificarPrecioAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(83, 83, 83)
+                        .addComponent(BtnModificarAcceso)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelModificarAccesoLayout.setVerticalGroup(
@@ -2416,27 +2352,15 @@ public class FrmPrincipal extends FrameABC {
                     .addComponent(jTextFieldModificarTipoAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelModificarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelModificarPresentacionAcceso)
-                    .addComponent(jTextFieldModificarPresenAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelModificarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelModificarCantUniAcceso)
-                    .addComponent(jTextFieldModificarCantUniAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelModificarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelModificarUniMedAcceso)
-                    .addComponent(jTextFieldModificarUniMedAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelModificarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelModificarPrecioAcceso)
                     .addComponent(jTextFieldModificarPrecioAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelModificarAccesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldModificarCantAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelModificarCantidadAcceso))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                .addGap(57, 57, 57)
                 .addComponent(BtnModificarAcceso)
-                .addGap(18, 18, 18))
+                .addContainerGap(176, Short.MAX_VALUE))
         );
 
         jPanelAmeAcceso.add(jPanelModificarAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 270, -1));
@@ -2970,7 +2894,6 @@ public class FrmPrincipal extends FrameABC {
     private javax.swing.JLabel jLabelAcceso;
     private javax.swing.JLabel jLabelAgregarAcabadoPint;
     private javax.swing.JLabel jLabelAgregarAcceso;
-    private javax.swing.JLabel jLabelAgregarCantUniAcceso;
     private javax.swing.JLabel jLabelAgregarCantUniImper;
     private javax.swing.JLabel jLabelAgregarCantUniMad;
     private javax.swing.JLabel jLabelAgregarCantUniPint;
@@ -2993,7 +2916,6 @@ public class FrmPrincipal extends FrameABC {
     private javax.swing.JLabel jLabelAgregarPrecioMad;
     private javax.swing.JLabel jLabelAgregarPrecioPint;
     private javax.swing.JLabel jLabelAgregarPrecioSella;
-    private javax.swing.JLabel jLabelAgregarPresentacionAcceso;
     private javax.swing.JLabel jLabelAgregarPresentacionImper;
     private javax.swing.JLabel jLabelAgregarPresentacionMad;
     private javax.swing.JLabel jLabelAgregarPresentacionPint;
@@ -3004,7 +2926,6 @@ public class FrmPrincipal extends FrameABC {
     private javax.swing.JLabel jLabelAgregarTipoMad;
     private javax.swing.JLabel jLabelAgregarTipoPint;
     private javax.swing.JLabel jLabelAgregarTipoSella;
-    private javax.swing.JLabel jLabelAgregarUniMedAcceso;
     private javax.swing.JLabel jLabelAgregarUniMedImper;
     private javax.swing.JLabel jLabelAgregarUniMedMad;
     private javax.swing.JLabel jLabelAgregarUniMedPint;
@@ -3023,7 +2944,6 @@ public class FrmPrincipal extends FrameABC {
     private javax.swing.JLabel jLabelMad;
     private javax.swing.JLabel jLabelModificarAcabadoPint;
     private javax.swing.JLabel jLabelModificarAcceso;
-    private javax.swing.JLabel jLabelModificarCantUniAcceso;
     private javax.swing.JLabel jLabelModificarCantUniImper;
     private javax.swing.JLabel jLabelModificarCantUniMad;
     private javax.swing.JLabel jLabelModificarCantUniPint;
@@ -3051,7 +2971,6 @@ public class FrmPrincipal extends FrameABC {
     private javax.swing.JLabel jLabelModificarPrecioMad;
     private javax.swing.JLabel jLabelModificarPrecioPint;
     private javax.swing.JLabel jLabelModificarPrecioSella;
-    private javax.swing.JLabel jLabelModificarPresentacionAcceso;
     private javax.swing.JLabel jLabelModificarPresentacionImper;
     private javax.swing.JLabel jLabelModificarPresentacionMad;
     private javax.swing.JLabel jLabelModificarPresentacionPint;
@@ -3062,7 +2981,6 @@ public class FrmPrincipal extends FrameABC {
     private javax.swing.JLabel jLabelModificarTipoMad;
     private javax.swing.JLabel jLabelModificarTipoPint;
     private javax.swing.JLabel jLabelModificarTipoSella;
-    private javax.swing.JLabel jLabelModificarUniMedAcceso;
     private javax.swing.JLabel jLabelModificarUniMedImper;
     private javax.swing.JLabel jLabelModificarUniMedMad;
     private javax.swing.JLabel jLabelModificarUniMedPint;
@@ -3115,7 +3033,6 @@ public class FrmPrincipal extends FrameABC {
     private javax.swing.JTextField jTextFieldAgregarCantMad;
     private javax.swing.JTextField jTextFieldAgregarCantPint;
     private javax.swing.JTextField jTextFieldAgregarCantSella;
-    private javax.swing.JTextField jTextFieldAgregarCantUniAcceso;
     private javax.swing.JTextField jTextFieldAgregarCantUniImper;
     private javax.swing.JTextField jTextFieldAgregarCantUniMad;
     private javax.swing.JTextField jTextFieldAgregarCantUniPint;
@@ -3130,7 +3047,6 @@ public class FrmPrincipal extends FrameABC {
     private javax.swing.JTextField jTextFieldAgregarPrecioMad;
     private javax.swing.JTextField jTextFieldAgregarPrecioPint;
     private javax.swing.JTextField jTextFieldAgregarPrecioSella;
-    private javax.swing.JTextField jTextFieldAgregarPresenAcceso;
     private javax.swing.JTextField jTextFieldAgregarPresenImper;
     private javax.swing.JTextField jTextFieldAgregarPresenMad;
     private javax.swing.JTextField jTextFieldAgregarPresenPint;
@@ -3140,7 +3056,6 @@ public class FrmPrincipal extends FrameABC {
     private javax.swing.JTextField jTextFieldAgregarTipoMad;
     private javax.swing.JTextField jTextFieldAgregarTipoPint;
     private javax.swing.JTextField jTextFieldAgregarTipoSella;
-    private javax.swing.JTextField jTextFieldAgregarUniMedAcceso;
     private javax.swing.JTextField jTextFieldAgregarUniMedImper;
     private javax.swing.JTextField jTextFieldAgregarUniMedMad;
     private javax.swing.JTextField jTextFieldAgregarUniMedPint;
@@ -3156,7 +3071,6 @@ public class FrmPrincipal extends FrameABC {
     private javax.swing.JTextField jTextFieldModificarCantMad;
     private javax.swing.JTextField jTextFieldModificarCantPint;
     private javax.swing.JTextField jTextFieldModificarCantSella;
-    private javax.swing.JTextField jTextFieldModificarCantUniAcceso;
     private javax.swing.JTextField jTextFieldModificarCantUniImper;
     private javax.swing.JTextField jTextFieldModificarCantUniMad;
     private javax.swing.JTextField jTextFieldModificarCantUniPint;
@@ -3176,7 +3090,6 @@ public class FrmPrincipal extends FrameABC {
     private javax.swing.JTextField jTextFieldModificarPrecioMad;
     private javax.swing.JTextField jTextFieldModificarPrecioPint;
     private javax.swing.JTextField jTextFieldModificarPrecioSella;
-    private javax.swing.JTextField jTextFieldModificarPresenAcceso;
     private javax.swing.JTextField jTextFieldModificarPresenImper;
     private javax.swing.JTextField jTextFieldModificarPresenMad;
     private javax.swing.JTextField jTextFieldModificarPresenPint;
@@ -3186,7 +3099,6 @@ public class FrmPrincipal extends FrameABC {
     private javax.swing.JTextField jTextFieldModificarTipoMad;
     private javax.swing.JTextField jTextFieldModificarTipoPint;
     private javax.swing.JTextField jTextFieldModificarTipoSella;
-    private javax.swing.JTextField jTextFieldModificarUniMedAcceso;
     private javax.swing.JTextField jTextFieldModificarUniMedImper;
     private javax.swing.JTextField jTextFieldModificarUniMedMad;
     private javax.swing.JTextField jTextFieldModificarUniMedPint;
